@@ -2,7 +2,7 @@
 
 # Build settings
 markdown: kramdown
-theme: minimal
+theme: ''
 source: /doc
 
 gems:
