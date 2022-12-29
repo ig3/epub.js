@@ -9,3 +9,5 @@ lib
 dist
 documentation/html
 types/*.js
+doc/_site
+doc/Gemfile.lock
