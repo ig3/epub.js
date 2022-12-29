@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<!---
+ Copyright (c) 2016 StrongLoop, IBM, and Express Contributors
+ License: MIT
+-->
+<html lang="en">
+
+  <head>
+    <title>epub.js 0.3.x - API Reference</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:image" content="https://expressjs.com/images/express-facebook-share.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="stylesheet" href="/css/style.css?_=1672304909">
+    <link rel="stylesheet" href="/css/dropit.css">
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+    <link rel="stylesheet" href="/css/en.css">
+    <link rel="stylesheet" href="/css/nodeinteractive.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script data-cfasync="false" src="/js/ismobile.js"></script>
+    <script data-cfasync="false" src="/js/app.js"></script>
+    <script data-cfasync="false" src="/js/retina.js"></script>
+    <script data-cfasync="false" src="/js/dropit.js"></script>
+    <script data-cfasync="false" src="/js/prism.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+</head>
+
+
+  <body>
+
+    <section class="content">
+
+      <header>
+  <div id="mobile-menu">
+      <div id="nav-button" class="fa fa-bars fa-2x button"></div>
+  </div>
+  <section id="logo"><a href="/" class="express">epub.js</a>
+  </section>
+  <div id="navbar">
+      <input id="q" placeholder="🔎 search">
+      <ul id="navmenu">
+          <li><a href="/" id="home-menu">Home</a></li>
+          <li>
+              <ul id="getting-started-menu" class="menu">
+                  <li><a href="/en/starter/installing.html">Getting started</a>
+                      <ul>
+                          <li>
+                            <a href="/en/starter/installing.html">
+                              Installing
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/en/starter/hello-world.html">
+                              Hello world
+                            </a>
+                          </li>
+                          <li>
+                          <a href="/en/starter/generator.html">
+                            Express generator
+                          </a>
+                          </li>
+                          <li>
+                            <a href="/en/starter/basic-routing.html">
+                              Basic routing
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/en/starter/static-files.html">
+                              Static files
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/en/starter/examples.html">
+                              More examples
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/en/starter/faq.html">
+                              FAQ
+                            </a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <ul id="guide-menu" class="menu">
+                  <li><a href="/en/guide/routing.html">Guide</a>
+                      <ul>
+                          <li><a href="/en/guide/routing.html">Routing</a>
+                          </li>
+                          <li><a href="/en/guide/writing-middleware.html">Writing middleware</a>
+                          </li>
+                          <li><a href="/en/guide/using-middleware.html">Using middleware</a>
+                          </li>
+                          <li><a href="/en/guide/overriding-express-api.html">Overriding the Express API</a>
+                          </li>
+                          <li><a href="/en/guide/using-template-engines.html">Using template engines</a>
+                          </li>
+                          <li><a href="/en/guide/error-handling.html">Error handling</a>
+                          </li>
+                          <li><a href="/en/guide/debugging.html">Debugging</a>
+                          </li>
+                          <li><a href="/en/guide/behind-proxies.html">Express behind proxies</a>
+                          </li>
+                          <li><a href="/en/guide/migrating-4.html">Moving to Express 4</a>
+                          </li>
+                          <li><a href="/en/guide/migrating-5.html">Moving to Express 5</a>
+                          </li>
+                          <li><a href="/en/guide/database-integration.html">Database integration</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <ul id="application-menu" class="menu">
+                  <li><a href="/en/4x/api.html" class="active">API reference</a>
+                      <ul>
+                          <li><a href="/en/0.3.x/api.html">0.3.x</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <ul id="advanced-topics-menu" class="menu">
+                  <li><a href="/en/advanced/developing-template-engines.html">Advanced topics</a>
+                      <ul>
+                          <li><a href="/en/advanced/developing-template-engines.html">Template engines</a>
+                          </li>
+                          <li><a href="/en/advanced/pm.html">Process managers</a>
+                          </li>
+                          <li><a href="/en/advanced/security-updates.html">Security updates</a>
+                          </li>
+                          <li><a href="/en/advanced/best-practice-security.html">Security best practices</a>
+                          </li>
+                          <li><a href="/en/advanced/best-practice-performance.html">Performance best practices</a>
+                          </li>
+                          <li><a href="/en/advanced/healthcheck-graceful-shutdown.html">Health checks and graceful shutdown</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <ul id="resources-menu" class="menu">
+                  <li><a href="/en/resources/glossary.html">Resources</a>
+                      <ul>
+                          <li>
+                            <a href="/en/resources/community.html">Community</a>
+                          </li>
+                          <li>
+                            <a href="/en/resources/glossary.html">Glossary</a>
+                          </li>
+                          <li>
+                            <a href="/en/resources/template-engines.html">Template Engines</a>
+                          </li>
+                          <li>
+                            <a href="/en/resources/middleware.html">Middleware</a>
+                          </li>
+                          <li>
+                            <a href="/en/resources/utils.html">Utility modules</a>
+                          </li>
+                          <li>
+                            <a href="/en/resources/frameworks.html">Frameworks</a>
+                          </li>
+                          <li>
+                            <a href="/en/resources/companies-using-express.html">Companies using Express</a>
+                          </li>
+                          <li>
+                            <a href="/en/resources/open-source-using-express.html">Open-source projects</a>
+                          </li>
+                          <li>
+                            <a href="/en/resources/learning.html">Additional learning</a>
+                          </li>
+                          <li>
+                            <a href="/en/resources/contributing.html">Contributing to Express</a>
+                          </li>
+                          <li>
+                            <a href="/en/changelog/4x.html">Release Change Log</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <!--
+          <li>
+              <ul id="changelog-menu" class="menu">
+                  <li><a href="/en/changelog/4x.html">Changelog</a>
+                      <ul>
+                          <li><a href="/en/changelog/4x.html">4.x</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+        -->
+      </ul>
+  </div>
+</header>
+
+
+      <ul id="menu">
+
+    <li id="epub-api"><a href="#epub">ePub()</a>
+    </li>
+
+    <li id="book-api"><a href="#book">Book</a>
+    <ul id="book-menu">
+      <li><em>Methods</em></li>
+      <li id="book-constructor"><a href="#book.constructor">Constructor()</a></li>
+      <li id="book-open"><a href="#book.open">open()</a></li>
+      <li id="book-load"><a href="#book.load">load()</a></li>
+      <li id="book-resolve"><a href="#book.resolve">resolve()</a></li>
+      <li id="book-canonical"><a href="#book.canonical">canonical()</a></li>
+      <li id="book-section"><a href="#book.section">section()</a></li>
+      <li id="book-renderTo"><a href="#book.renderTo">renderTo()</a></li>
+      <li id="book-setRequestCredentials"><a href="#book.setRequestCredentials">setRequestCredentials()</a></li>
+      <li id="book-setRequestHeaders"><a href="#book.setRequestHeaders">setRequestHeaders()</a></li>
+      <li id="book-coverUrl"><a href="#book.coverUrl">coverUrl()</a></li>
+      <li id="book-getRange"><a href="#book.getRange">getRange()</a></li>
+      <li id="book-key"><a href="#book.key">key()</a></li>
+      <li id="book-destroy"><a href="#book.destroy">destroy()</a></li>
+    </ul>
+    </li>
+
+    <li id="rendition-api"><a href="#rendition">Rendition</a>
+    <ul id="rendition-menu">
+      <li><em>Methods</em></li>
+      <li id="rendition-constructor"><a href="#rendition.constructor">Constructor()</a></li>
+      <li id="rendition-attachTo"><a href="#rendition.attachTo">attachTo()</a></li>
+      <li id="rendition-clear"><a href="#rendition.clear">clear()</a></li>
+      <li id="rendition-currentLocation"><a href="#rendition.currentLocation">currentLocation()</a></li>
+      <li id="rendition-destroy"><a href="#rendition.destroy">destroy()</a></li>
+      <li id="rendition-direction"><a href="#rendition.direction">direction()</a></li>
+      <li id="rendition-display"><a href="#rendition.display">display()</a></li>
+      <li id="rendition-flow"><a href="#rendition.flow">flow()</a></li>
+      <li id="rendition-getContents"><a href="#rendition.getContents">getContents()</a></li>
+      <li id="rendition-getRange"><a href="#rendition.getRange">getRange()</a></li>
+      <li id="rendition-layout"><a href="#rendition.layout">layout()</a></li>
+      <li id="rendition-moveTo"><a href="#rendition.moveTo">moveTo()</a></li>
+      <li id="rendition-next"><a href="#rendition.next">next()</a></li>
+      <li id="rendition-prev"><a href="#rendition.prev">prev()</a></li>
+      <li id="rendition-reportLocation"><a href="#rendition.reportLocation">reportLocation()</a></li>
+      <li id="rendition-requireManager"><a href="#rendition.requireManager">requireManager()</a></li>
+      <li id="rendition-resize"><a href="#rendition.resize">resize()</a></li>
+      <li id="rendition-setManager"><a href="#rendition.setManager">setManager()</a></li>
+      <li id="rendition-spread"><a href="#rendition.spread">spread()</a></li>
+      <li id="rendition-start"><a href="#rendition.start">start()</a></li>
+      <li id="rendition-views"><a href="#rendition.views">views()</a></li>
+    </ul>
+    </li>
+
+    <li id="contents-api"><a href="#contents">Contents</a>
+    </li>
+
+    <li id="epubcfi-api"><a href="#epubcfi">EpubCFI</a>
+    </li>
+
+    <li id="utils-api"><a href="#utils">Utils</a>
+    </li>
+
+</ul>
+
+
+      <div id="overlay"></div>
+
+      <div id="api-doc">
+
+  <h1>0.3.x API</h1>
+
+  <h2 id="epub">ePub(url, [options])</h2>
+
+  <p>Creates an epub.js Book object.</p>
+
+  <p>The ePub() function is a top-level/global function exported by the epub module.</p>
+
+  <p>Constructs a new Book object for the epub book at the given url.</p>
+
+  <pre><code class="language-js">const book = ePub('https://epub.server.example.com/path/to/book.epub');
+</code></pre>
+
+  <p>It creates the book as:</p>
+
+  <pre><code class="language-js">  new Book(url, options);
+</code></pre>
+
+  <h3 id="epub.methods">Methods</h3>
+
+  <p>The ePub function object has additional properties:</p>
+
+  <ul>
+    <li>Book</li>
+    <li>Rendition</li>
+    <li>Contents</li>
+    <li>CFI - epubcfi</li>
+    <li>utils</li>
+  </ul>
+
+  <p>These access the corresponding objects of the epub.js library.</p>
+
+  <h3 id="book">Book</h3>
+
+  <p>The Book object encapsulates an epub book. It has methods for opening,
+closing, rendering and navigating within the book.</p>
+
+  <h4 id="book.constructor">Constructor: new Book(url, [options])</h4>
+
+  <p>Constructs a new epubjs Book object for the book at the given url.</p>
+
+  <pre><code class="language-js">const book = new Book('https://epub.server.example.com/path/to/book.epub');
+</code></pre>
+  <p>Arguments:</p>
+
+  <ul>
+    <li><code>url</code> (string) - The URL at which to request the epub book.</li>
+    <li><code>options</code> (object) - Optional options object to configure the book.</li>
+  </ul>
+
+  <p>Returns: an instance of Book.</p>
+
+  <p>The <code>options</code> argument can have the following fields:</p>
+
+  <ul>
+    <li><code>requestMethod</code> (function) - a function to use instead of the inbuilt request function for requesting resources.
+ <strong>Default</strong>: utils/request</li>
+    <li><code>requestCredentials</code> (boolean) - Send the xhr request with Credentials if truthy.
+ <strong>Default</strong>: undefined</li>
+    <li><code>requestHeaders</code> (object) - send the xhr request headers.
+ <strong>Default</strong>: undefined</li>
+    <li><code>encoding</code> (string) - optional to pass ‘binary’ or ‘base64’ to archived Epubs.
+ <strong>Default</strong>: binary</li>
+    <li><code>replacements</code> (string) - use ‘base64’, ‘blobUrl’ or ‘none’ for replacing
+ assets in archived Epubs.
+ <strong>Default</strong>: ‘none’</li>
+    <li><code>canonical</code> (function) - function to determine canonical urls for a path.
+ <strong>Default</strong>: undefined.</li>
+    <li><code>openAs</code> (string) - optional string to determine the input type.
+ <strong>Default</strong>: undefined.</li>
+  </ul>
+
+  <h4 id="book.methods">Methods</h4>
+
+  <h5 id="book.open">open(input, what)</h5>
+
+  <p>Open an epub from a URL or ArrayBuffer.</p>
+
+  <p>Returns: Promise that resolves when the book has been loaded.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>input (string | ArrayBuffer) - a URL or path string or an ArrayBuffer.</li>
+    <li>what (string) - ‘binary’, ‘base64’, ‘epub’, ‘opf’, ‘json’ or ‘directory’
+      <ul>
+        <li>force opening as a certain type. <strong>Default</strong>: ???</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h5 id="book.load">load(path&gt;</h5>
+
+  <p>Load a resource from the Book.</p>
+
+  <p>Returns: a Promise that resolves to the requested resource.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>path (string) - path to the resource to load.</li>
+  </ul>
+
+  <h5 id="book.resolve">resolve(path, [absolute])</h5>
+
+  <p>Resolve a path to its absolute position in the Book.</p>
+
+  <p>Returns: (string) the resolved path string</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>path (string) - the path to resolve</li>
+    <li>absolute (boolean) - force resolving the full URL if true</li>
+  </ul>
+
+  <h5 id="book.canonical">canonical(path)</h5>
+
+  <p>Get a canonical link to a path.</p>
+
+  <p>Returns: (string) the canonical path string</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>path (string) - ???</li>
+  </ul>
+
+  <h5 id="book.section">section(target)</h5>
+
+  <p>Get a Section of the Book from the Spine.</p>
+
+  <p>Alias for: book.spine.get</p>
+
+  <p>Returns: (Section) the target Section of the Book</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>target (string) - the section identifier</li>
+  </ul>
+
+  <h5 id="book.renderto">renderTo(element, [options])</h5>
+
+  <p>Render the book to a DOM element.</p>
+
+  <p>Returns: (Rendition) - the rendition object of the rendered book.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>element (element | string) - The DOM element or string (???) to add the
+rendition to.</li>
+    <li>options (object) - The options for rendering the book.</li>
+  </ul>
+
+  <p>The <code>options</code> argument can have the following fields:</p>
+
+  <ul>
+    <li>???</li>
+  </ul>
+
+  <h5 id="book.setRequestCredentials">setRequestCredentials(credentials)</h5>
+  <p>o</p>
+
+  <p>Set if request should use withCredentials.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>credentials (boolean) - true of request should use credentials???</li>
+  </ul>
+
+  <p>How are the actual credentials set?</p>
+
+  <h5 id="book.setRequestHeaders">setRequestHeaders(headers)</h5>
+
+  <p>Set headers that should be included with the request.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>headers (object) - the set of headers to include</li>
+  </ul>
+
+  <h5 id="book.coverUrl">coverUrl()</h5>
+
+  <p>Get the URL of the cover image.</p>
+
+  <p>Returns: (string) the URL of the cover image</p>
+
+  <p>Arguments:</p>
+
+  <h5 id="book.getRange">getRange(cfiRange)</h5>
+
+  <p>Find a DOM Range for a given CFI Range.</p>
+
+  <p>Returns: (Range) - the DOM Range corresponding to the given CFI Range</p>
+
+  <h5 id="book.key">key([identifier])</h5>
+
+  <p>Generated the Book Key using the identifier in the manifest or other string
+provided.</p>
+
+  <p>Returns: (string) the generated key</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>identifier (string) - an identifier to be used insead of the identifier
+in the manifest. <strong>Default</strong>: the identifier in the manifest.</li>
+  </ul>
+
+  <h5 id="book.destroy">destroy()</h5>
+
+  <p>Destroy the Book instance and all associated objects.</p>
+
+  <p>Returns: undefined</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h3 id="rendition">Rendition</h3>
+
+  <p>The Rendition object encapsulates the rendering of an epub book. It has
+methods for attaching the rendition to a DOM element, getting and setting
+the location, etc.</p>
+
+  <h4 id="rendition.constructor">Constructor: new Rendition(book, [options])</h4>
+
+  <p>Constructs a new Rendition object for the rendition at the given Book.</p>
+
+  <pre><code class="language-js">const rendition = new Rendition(book, [options]);
+</code></pre>
+  <p>Arguments:</p>
+
+  <ul>
+    <li><code>book</code> (Book) - The instance of Book to be rendered.</li>
+    <li><code>options</code> (object) - Optional options object to configure the rendition.</li>
+  </ul>
+
+  <p>Returns: an instance of Rendition.</p>
+
+  <p>The <code>options</code> argument can have the following fields:</p>
+
+  <ul>
+    <li><code>width</code> (number) - The width of the rendered book.
+ <strong>Default</strong>: undefined</li>
+    <li><code>height</code> (number) - The height of the rendered book.
+ <strong>Default</strong>: undefined</li>
+    <li><code>ignoreClass</code> (string) - class for the cfi parser to ignore.
+ <strong>Default</strong>: undefined</li>
+    <li><code>manager</code> (string|function|object) - The manager to manage the
+rendition.
+ <strong>Default</strong>: ‘default’</li>
+    <li><code>view</code> (string|function) - ???
+ <strong>Default</strong>: ‘iframe’</li>
+    <li><code>layout</code> (string) - layout to force.
+ <strong>Default</strong>: undefined.</li>
+    <li><code>spread</code> (string) - force spread value.
+ <strong>Default</strong>: undefined.</li>
+    <li><code>minSpreadWidth</code> (number) - overridden by spread:none(never)/both(always).
+ <strong>Default</strong>: undefined.</li>
+    <li><code>stylesheet</code> (string) - url of stylesheet to be injected.
+ <strong>Default</strong>: undefined.</li>
+    <li><code>resizeOnOrientationChange</code> (boolean) - false to disable orientation events.
+ <strong>Default</strong>: undefined.</li>
+    <li><code>script</code> (string) - URL of script to be injected.
+ <strong>Default</strong>: undefined.</li>
+  </ul>
+
+  <h4 id="rendition.methods">Methods</h4>
+
+  <h5 id="rendition.attachTo">attachTo(element)</h5>
+
+  <p>Attach the rendition container to the given element in the DOM. The
+container must be attached before the rendering can begin.</p>
+
+  <p>Returns: Promise that resolves when the container has been attached.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>element (element) - The DOM element to which the container should be
+attached.</li>
+  </ul>
+
+  <h5 id="rendition.clear">clear()</h5>
+
+  <p>Clear the rendered views.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h5 id="rendition.currentLocation">currentLocation()</h5>
+
+  <p>Get the CurrentLocation object.</p>
+
+  <p>Returns: (displayedLocation|Promise) The displayedLocation object with the
+current location or a Promise that resolves to this.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h5 id="rendition.destroy">destroy()</h5>
+
+  <p>Remove and Clean Up the Rendition.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h5 id="rendition.direction">direction(direction)</h5>
+
+  <p>Adjust the direction of the rendition.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>direction (string) - the direction for the rendition.</li>
+  </ul>
+
+  <h5 id="rendition.display">display(target)</h5>
+
+  <p>Display a point in the book.</p>
+
+  <p>The request will be added to the rendering Queue, so it will wait until the
+book is opened, rendering started and all previously queued rendering tasks
+have finished.</p>
+
+  <p>Returns: (Promise) a promise that resolves to ??? when the given target has
+been displayed in the rendition.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>target (string) - URL or EpubCFI that determines the location in the
+book to be displayed.</li>
+  </ul>
+
+  <h5 id="rendition.flow">flow(flow)</h5>
+
+  <p>Adjust the flow of the rendition to paginated or scrolled
+(scrolled-continuous Vs scrolled-doc are handled by different view
+managers).</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments</p>
+
+  <ul>
+    <li>flow (string) - the flow to be set.</li>
+  </ul>
+
+  <h5 id="rendition.getContents">getContents()</h5>
+
+  <p>Get the Contents object of each rendered view.</p>
+
+  <p>Returns: (Contents[]) Array of Contents objects, one for each rendered
+view.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h5 id="rendition.getRange">getRange(cfi, ignoreClass)</h5>
+
+  <p>Get a Range from a Visible CFI.</p>
+
+  <p>Returns: (range) a range object.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>cfi (string) - An EpubCFI string defining the range.</li>
+    <li>ignoreClass (string) - a class to be ignored???</li>
+  </ul>
+
+  <h5 id="rendition.layout">layout()</h5>
+
+  <p>Adjust the laout of the rendition to reflowable or pre-paginated.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>settings (object) - ???</li>
+  </ul>
+
+  <h5 id="rendition.moveTo">moveTo(offset)</h5>
+
+  <p>Move the Rendition to a specific offset. Usually you would be better off
+calling display().</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>offset (object) - ???</li>
+  </ul>
+
+  <h5 id="rendition.next">next()</h5>
+
+  <p>Got to the next “page” in the rendition.</p>
+
+  <p>Returns: (Promise) A Promise that resolves when the rendition has been
+updated to display the next “page”.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h5 id="rendition.prev">prev()</h5>
+
+  <p>Got to the previous “page” in the rendition.</p>
+
+  <p>Returns: (Promise) A Promise that resolves when the rendition has been
+updated to display the previous “page”.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h5 id="rendition.reportLocation">reportLocation()</h5>
+
+  <p>Report the current location.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h5 id="rendition.requireManager">requireManager(manager)</h5>
+
+  <p>Require the manager from the passed string, or as a class function.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments</p>
+
+  <ul>
+    <li><code>manager</code> (string|object) ???</li>
+  </ul>
+
+  <h5 id="rendition.resize">resize([width], [height])</h5>
+
+  <p>Trigger a resoze of the views.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li><code>width</code> (number) the width of the view.</li>
+    <li><code>height</code> (number) the height of the view.</li>
+  </ul>
+
+  <h5 id="rendition.setManager">setManager(manager)</h5>
+
+  <p>Set the manager function.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li><code>manager</code> (function) set the manager function to the given function.</li>
+  </ul>
+
+  <h5 id="rendition.spread">spread(spread, min)</h5>
+
+  <p>Adjust if the rendition uses spreads.</p>
+
+  <p>Returns: ???</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>spread (string) - ‘none’ or ‘auto’.</li>
+    <li>min (int) - minimum width to use spreads at.</li>
+  </ul>
+
+  <h5 id="rendition.start">start()</h5>
+
+  <p>Start the rendering.</p>
+
+  <p>Returns: (Promise) a Promise that resolves when rendering has started.</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h5 id="rendition.views">views()</h5>
+
+  <p>Get the views member from the manager.</p>
+
+  <p>Returns: (Views)</p>
+
+  <p>Arguments:</p>
+
+  <ul>
+    <li>none</li>
+  </ul>
+
+  <h3 id="contents">Contents(url, [options])</h3>
+
+  <p>Constructs a new epubjs Contents object.</p>
+
+  <pre><code class="language-js">const contents = new Contents();
+</code></pre>
+
+  <h4 id="contents.methods">Methods</h4>
+
+  <h3 id="epubcfi">EpubCFI(url, [options])</h3>
+
+  <p>Constructs a new epubjs Book object for the book at the given url.</p>
+
+  <pre><code class="language-js">const book = new Book('https://epub.server.example.com/path/to/book.epub');
+</code></pre>
+
+  <h4 id="epubcfi.methods">Methods</h4>
+
+  <h3 id="utils">Utils(url, [options])</h3>
+
+  <p>Constructs a new epubjs Book object for the book at the given url.</p>
+
+  <pre><code class="language-js">const book = new Book('https://epub.server.example.com/path/to/book.epub');
+</code></pre>
+
+  <h4 id="utils.methods">Methods</h4>
+
+</div>
+
+
+    </section>
+
+    <a id="top" href="#"><img src="/images/arrow.png"></a>
+
+<footer>
+  <section id="doc-langs">
+  Documentation translations provided by <a href="http://strongloop.com">StrongLoop/IBM</a>:
+  <a href="/fr/">French</a>, <a href="/de/">German</a>, <a href="/es/">Spanish</a>, <a href="/it/">Italian</a>, <a href="/ja/">Japanese</a>, <a href="/ru/">Russian</a>, <a href="/zh-cn/">Chinese</a>, <a href="/zh-tw/">Traditional Chinese</a>, <a href="/ko/">Korean</a>, <a href="/pt-br/">Portuguese</a>.
+  <br>
+  Community translation available for: <a href="/sk/">Slovak</a>, <a href="/uk/">Ukrainian</a>, <a href="/uz/">Uzbek</a>, <a href="/tr/">Turkish</a> and <a href="/th/">Thai</a>.
+  </section>
+  <div id="footer-content">
+      <div id="github">
+        <a class="github-button" href="https://github.com/expressjs/expressjs.com" data-icon="octicon-star" aria-label="Star expressjs/expressjs.com on GitHub">Star</a>
+      </div>
+      <div id="sponsor"><a href="https://expressjs.com">Express</a> is a project of the <a href="https://openjsf.org">OpenJS Foundation</a>.</div>
+      <div id="fork"><a href="https://github.com/expressjs/expressjs.com">Fork the website on GitHub</a>.</div>
+      <div>Copyright &copy; 2017 StrongLoop, IBM, and other expressjs.com contributors.</div>
+  </div>
+  <div id="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/us/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 United States License</a>.
+  </div>
+</footer>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" onload="docsearch({
+  apiKey: '',
+  indexName: '',
+  inputSelector: '#q',
+  algoliaOptions: { 'facetFilters': ['lang:en'] }
+})" async></script>
+
+
+
+  </body>
+
+</html>
