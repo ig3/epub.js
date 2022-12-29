@@ -2,7 +2,7 @@
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: minimal
 
 gems:
   - jekyll-redirect-from
