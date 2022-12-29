@@ -2,8 +2,6 @@
 
 # Build settings
 markdown: kramdown
-theme: ''
-source: /doc
 
 gems:
   - jekyll-redirect-from
