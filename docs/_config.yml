@@ -3,6 +3,7 @@
 # Build settings
 markdown: kramdown
 theme: minima
+baseurl: /epub.js
 
 plugins:
   - jekyll-redirect-from
