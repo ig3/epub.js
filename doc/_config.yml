@@ -3,6 +3,7 @@
 # Build settings
 markdown: kramdown
 theme: minimal
+source: /doc
 
 gems:
   - jekyll-redirect-from
