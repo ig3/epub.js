@@ -1,9 +1,13 @@
-<h2 id="epubcfi">EpubCFI(url, [options])</h2>
+<h2 id="epubcfi">EpubCFI</h2>
 
-Constructs a new epubjs Book object for the book at the given url.
+Parsing and creation of EpubCFIs.
+
+See
+[IDPF EPUB Canonical Fragment Identifiers](https://idpf.org/epub/linking/cfi/epub-cfi.html)
+
 
 ```js
-const book = new Book('https://epub.server.example.com/path/to/book.epub');
+const epubcfi = new EpubCFI();
 ```
 
 <h3 id='epubcfi.methods'>Methods</h3>
