@@ -297,46 +297,39 @@ class Mapping {
 	 * @param {number} end position to end at
 	 * @return {Range}
 	 */
-	findTextStartRange(node, start, end){
-		var ranges = this.splitTextNodeIntoRanges(node);
-		var range;
-		var pos;
-		var left, top, right;
-
-		for (var i = 0; i < ranges.length; i++) {
-			range = ranges[i];
-
-			pos = range.getBoundingClientRect();
-
-			if (this.horizontal && this.direction === "ltr") {
-
-				left = pos.left;
-				if( left >= start ) {
-					return range;
-				}
-
-			} else if (this.horizontal && this.direction === "rtl") {
-
-				right = pos.right;
-				if( right <= end ) {
-					return range;
-				}
-
-			} else {
-
-				top = pos.top;
-				if( top >= start ) {
-					return range;
-				}
-
-			}
-
-			// prev = range;
-
-		}
-
-		return ranges[0];
-	}
+  findTextStartRange(node, start, end) {
+    const range = new Range();
+    range.setStart(node, 0);
+    let lb = 0;
+    let ub = node.length; // node should be a text node
+    while (lb < ub) {
+      const mid = Math.floor((lb + ub) / 2);
+      range.setEnd(node, mid);
+      const rect = range.getBoundingClientRect();
+      if (this.horizontal && this.direction === "ltr") {
+        if (rect.right > start) {
+          ub = mid - 1;
+        } else {
+          lb = mid + 1;
+        }
+      } else if (this.horizontal && this.direction === "rtl") {
+        if (rect.right <= end) {
+          lb = mid + 1;
+        } else {
+          ub = mid - 1;
+        }
+      } else {
+        if (rect.top >= start) {
+          ub = mid -1;
+        } else {
+          lb = mid + 1;
+        }
+      }
+    }
+    range.setStart(node, lb);
+    range.setEnd(node, node.length);
+    return(range);
+  }
 
 	/**
 	 * Find Text End Range
@@ -346,62 +339,41 @@ class Mapping {
 	 * @param {number} end position to end at
 	 * @return {Range}
 	 */
-	findTextEndRange(node, start, end){
-		var ranges = this.splitTextNodeIntoRanges(node);
-		var prev;
-		var range;
-		var pos;
-		var left, right, top, bottom;
+  findTextEndRange(node, start, end) {
+    const range = new Range();
+    range.setStart(node, 0);
+    let lb = 0;
+    let ub = node.length; // node should be a text node
+    while (lb < ub) {
+      const mid = Math.floor((lb + ub) / 2);
+      range.setEnd(node, mid);
+      const rect = range.getBoundingClientRect();
+      if (this.horizontal && this.direction === "ltr") {
+        if (rect.right > end) {
+          ub = mid - 1;
+        } else {
+          lb = mid + 1;
+        }
+      } else if (this.horizontal && this.direction === "rtl") {
+        if (rect.right <= start) {
+          lb = mid + 1;
+        } else {
+          ub = mid - 1;
+        }
+      } else {
+        if (rect.bottom > end) {
+          ub = mid -1;
+        } else {
+          lb = mid + 1;
+        }
+      }
+    }
 
-		for (var i = 0; i < ranges.length; i++) {
-			range = ranges[i];
-
-			pos = range.getBoundingClientRect();
-
-			if (this.horizontal && this.direction === "ltr") {
-
-				left = pos.left;
-				right = pos.right;
-
-				if(left > end && prev) {
-					return prev;
-				} else if(right > end) {
-					return range;
-				}
-
-			} else if (this.horizontal && this.direction === "rtl") {
-
-				left = pos.left
-				right = pos.right;
-
-				if(right < start && prev) {
-					return prev;
-				} else if(left < start) {
-					return range;
-				}
-
-			} else {
-
-				top = pos.top;
-				bottom = pos.bottom;
-
-				if(top > end && prev) {
-					return prev;
-				} else if(bottom > end) {
-					return range;
-				}
-
-			}
-
-
-			prev = range;
-
-		}
-
-		// Ends before limit
-		return ranges[ranges.length-1];
-
-	}
+    // ub === lb
+    range.setStart(node, 0);
+    range.setEnd(node, ub);
+    return(range);
+  }
 
 	/**
 	 * Split up a text node into ranges for each word
