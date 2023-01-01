@@ -141,6 +141,7 @@ class Mapping {
 
 			$el = stack.shift();
 
+      // walk the text nodes of the element
 			found = this.walk($el, (node) => {
 				var left, right, top, bottom;
 				var elPos;

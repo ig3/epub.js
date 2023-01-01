@@ -578,7 +578,7 @@ class IframeView {
 	}
 
 	locationOf(target) {
-		var parentPos = this.iframe.getBoundingClientRect();
+		var parentPos = this.iframe.getBoundingClientRect(); // for side effects?
 		var targetPos = this.contents.locationOf(target, this.settings.ignoreClass);
 
 		return {

@@ -19,6 +19,8 @@ Returns: an instance of Book.
 
 The `options` argument can have the following fields:
 
+ * `manager` (string\|object) - 'default', 'continuous' or a viewManager
+   object.
  * `requestMethod` (function) - a function to use instead of the inbuilt request function for requesting resources.
  **Default**: utils/request
  * `requestCredentials` (boolean) - Send the xhr request with Credentials if truthy.
@@ -36,6 +38,15 @@ The `options` argument can have the following fields:
  **Default**: undefined.
 
 
+There are two view managers available: default and continuous.
+
+The default view manager provides a paginated display. One chapter /
+section at a time is displayed, split into pages.
+
+The continuous view manager provides a continuous display presenting one
+chapter / section at a time, complete with vertical scrolling.
+
+
 <h4 id='book.methods'>Methods</h4>
 
 
@@ -50,6 +61,25 @@ Arguments:
  * input (string \| ArrayBuffer) - a URL or path string or an ArrayBuffer.
  * what (string) - 'binary', 'base64', 'epub', 'opf', 'json' or 'directory'
    - force opening as a certain type. **Default**: ???
+
+
+<h6>what = 'binary'</h6>
+
+`input` should be a zip file in the form of a String, Array of bytes,
+ArrayBuffer, Uint8Array, Buffer, Blob or a Promise returning one of these.
+
+The data is unzipped using [JSZip](https://stuk.github.io/jszip/).
+
+The type of input varies with `what`:
+
+ * binary
+ * base64
+ * epub
+ * opf
+ * json
+ * directory
+ * undefined
+
 
 <h5 id="book.load">load(path></h5>
 
@@ -103,13 +133,16 @@ Returns: (Rendition) - the rendition object of the rendered book.
 
 Arguments:
 
- * element (element \| string) - The DOM element or string (???) to add the
-   rendition to.
+ * element (element \| string) - The DOM element (element) or element ID
+   (string) to add the rendition to.
  * options (object) - The options for rendering the book.
 
-The `options` argument can have the following fields:
+The `options` are passed to the Rendition constructor. See Rendition for
+details of the options.
 
- * ???
+A new Rendition is constructed and then attached to the given element by
+appending it as a child element. This would typically be to a `div` element
+but other elements are possible.
 
 <h5 id="book.setRequestCredentials">setRequestCredentials(credentials)</h5>o
 

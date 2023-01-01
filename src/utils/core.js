@@ -67,6 +67,12 @@ export function isNumber(n) {
 }
 
 /**
+ * The only place this is used is in rendition.display to evaluate target.
+ * It may be that in this case target is in the range 0 to 1.0. And a
+ * target that is a number isn't a documented feature. So, perhaps this is
+ * OK as implemented for this case, but it does not appear to be a good
+ * implementation to determine if a string is a representation of a float
+ * in general.
  * @param {any} n
  * @returns {boolean}
  * @memberof Core
@@ -82,6 +88,7 @@ export function isFloat(n) {
 		return true;
 	}
 
+  // TODO: what about '1.0'? Math.floor(f) would be 1.0.
 	return Math.floor(f) !== f;
 }
 

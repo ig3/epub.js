@@ -96,13 +96,13 @@ class Locations {
 		var range;
 		var doc = contents.ownerDocument;
 		var body = qs(doc, "body");
-		var counter = 0;
+		var counter = 0; // number of characters accumulated in the current range
 		var prev;
 		var _break = chars || this.break;
 		var parser = function(node) {
 			var len = node.length;
-			var dist;
-			var pos = 0;
+			var dist; // distance (characters) to the next break
+			var pos = 0; // position within the current text node
 
 			if (node.textContent.trim().length === 0) {
 				return false; // continue
@@ -119,6 +119,7 @@ class Locations {
 
 			// Node is smaller than a break,
 			// skip over it
+      // TODO: revise to _break > len + counter
 			if(dist > len){
 				counter += len;
 				pos = len;
@@ -393,7 +394,7 @@ class Locations {
 		// Make sure 1 goes to very end
 		if (percentage >= 1) {
 			let cfi = new EpubCFI(this._locations[this.total]);
-			cfi.collapse();
+			cfi.collapse(); // get the epubcfi of the end of the range
 			return cfi.toString();
 		}
 

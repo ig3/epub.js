@@ -114,9 +114,18 @@ been displayed in the rendition.
 
 Arguments:
 
- * target (string) - URL or EpubCFI that determines the location in the
-   book to be displayed.
+ * target (string) - URL, EpubCFI or floating point number in the range 0
+   to 1, that determines the location in the book to be displayed.
 
+If `target` is a non-integer number it selects a 'location': a range of 150
+characters. The book is divided into ranges of 150 characters. If `target`
+is less than 1 then the 'location' at the corresponding proportion of the
+length of the 'locations' array is selected. Otherwise the last element of
+the 'locations' array is selected.
+
+Otherwise, `target` must be an integer index into the spine, or an epubcfi
+string, ID string (prefixed by '#') or an href string that matches one of
+the spine elements.
 
 <h5 id="rendition.flow">flow(flow)</h5>
 
@@ -270,4 +279,89 @@ Returns: (Views)
 Arguments:
 
  * none
+
+
+<h4 id="rendition.managers.default">Default Display Manager</h4>
+
+The default display manager (selected by options.manager = 'default' or
+undefined) provides a paginated display.
+
+There is a fault in the display method of the default manager. The `target`
+is checked to see if it is a number or matches the href value of the
+selected section, in which case it is not used to select a location within
+the section. But another possibility is that the target is an ID (prefixed
+by '#') that matches the section, in which case a position within the
+section is not indicated.
+
+There is a layout called 'pre-paginated'. It isn't immediately obvious what
+this is / does. If the layout is pre-paginated, the display method will not
+move to the selected location.
+
+The default display works by ???
+
+Maybe it renders the entire chapter as a series of pages then exposes one
+page at a time by offsetting it into the display container with overflow
+hidden? Otherwise it must re-render a subset every time a page is selected.
+
+Now does it choose which page to display?
+
+How is the chapter broken into pages?
+
+How are resize events handled, which change the amount of text on a page?
+
+If the display is 'full size' then the window is scrolled. Otherwise, the
+container is scrolled, when scrolling to a position in a chapter.
+
+
+<h5 id="rendition.ViewManager">ViewManager</h5>
+
+There are two built-in view managers: 'default' and 'continuous'.
+
+The default view manager provides a paginated view.
+
+The continuous view manager provides a 'continuous' view: the entire
+section is visible with a scrollbar.
+
+Both present a chapter/section at a time. The paginated view makes part of
+the chapter/section visible at a time.
+
+<h6>Default View Manager</h6>
+
+The default view manager renders a paginated view of the book.
+
+The display() function of the view manager accepts a target. While other
+forms of target are handles, perhaps the most common case is an epubcfi
+string specifying a particular point on the text.
+
+The default view manager displays the page that includes the target point
+in the text. An epubcfi, technically, specifies a point before a character,
+rather than a character, but it is a distinction without significance in
+this use.
+
+<h6>Continuous View Manager</h6>
+
+
+<h5>Views</h5>
+
+There are two views: iframe and inline.
+
+The iframe view creates an iframe element and the book is rendered into
+this iframe element.
+
+The inline view, I presume, renders the book into an inline element. This
+provides a bit less segregation, which may be good or bad, depending on the
+issue.
+
+The default view appears to be 'iframe'.
+
+<h6>iframe</h6>
+
+Each instance has an id: 'epubjs-view-' + uuid(), so they are all unique
+and there might be more than one in a document at a time.
+
+Each view is a view of a single section.
+
+
+
+
 
