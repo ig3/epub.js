@@ -1,4 +1,4 @@
-<h3 id="epubcfi">EpubCFI(url, [options])</h3>
+<h2 id="epubcfi">EpubCFI(url, [options])</h2>
 
 Constructs a new epubjs Book object for the book at the given url.
 
@@ -6,9 +6,9 @@ Constructs a new epubjs Book object for the book at the given url.
 const book = new Book('https://epub.server.example.com/path/to/book.epub');
 ```
 
-<h4 id='epubcfi.methods'>Methods</h4>
+<h3 id='epubcfi.methods'>Methods</h3>
 
-<h5 id="epubcfi.toRange">toRange(document, ignoreClass)</h5>
+<h4 id="epubcfi.toRange">toRange(document, ignoreClass)</h4>
 
 Creates a DOM range corresponding to the CFI of the EpubCFI instance.
 

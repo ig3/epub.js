@@ -1,4 +1,4 @@
-<h3 id="locations">Locations</h3>
+<h2 id="locations">Locations</h2>
 
 The Locations object deals with locations within a book.
 
@@ -6,7 +6,7 @@ The book is divided into an array of ranges with a maximum size, by
 default, 150 characters. For each such range an epubcfi is generated and
 appended to the array of 'locations'. 
 
-<h4 id="locations.constructor">Constructor: new Rendition(book, [options])</h4>
+<h3 id="locations.constructor">Constructor: new Rendition(book, [options])</h3>
 
 Constructs a new Rendition object for the locations at the given Book.
 
@@ -47,10 +47,10 @@ The `options` argument can have the following fields:
  **Default**: undefined.
 
 
-<h4 id='locations.methods'>Methods</h4>
+<h3 id='locations.methods'>Methods</h3>
 
 
-<h5 id="locations.cfiFromPercentage">cfiFromPercentage(percentage)</h5>
+<h4 id="locations.cfiFromPercentage">cfiFromPercentage(percentage)</h4>
 
 Returns: (string) the epubcfi of the location range that begins at
 approximately the given percentage through the book.
@@ -66,7 +66,7 @@ The book is divided into ranges of 150 characters. The returned epubcfi
 should be for the range that includes the character at the given
 percentage.
 
-<h5 id="locations.parse">parse(contents, cfiBase, chars)</h5>
+<h4 id="locations.parse">parse(contents, cfiBase, chars)</h4>
 
 Parse the contents of a single section (spine item) of the book, generating
 an array of ranges of maximum length 150 characters.
@@ -87,7 +87,7 @@ Arguments:
 The content must have a `body` element. The text nodes within the body
 element are processed. 
 
-<h5 id="locations.attachTo">attachTo(element)</h5>
+<h4 id="locations.attachTo">attachTo(element)</h4>
 
 Attach the locations container to the given element in the DOM. The
 container must be attached before the rendering can begin.
@@ -99,7 +99,7 @@ Arguments:
  * element (element) - The DOM element to which the container should be
    attached.
 
-<h5 id="locations.clear">clear()</h5>
+<h4 id="locations.clear">clear()</h4>
 
 Clear the rendered views.
 
@@ -109,7 +109,7 @@ Arguments:
 
  * none
 
-<h5 id="locations.currentLocation">currentLocation()</h5>
+<h4 id="locations.currentLocation">currentLocation()</h4>
 
 Get the CurrentLocation object.
 
@@ -120,7 +120,7 @@ Arguments:
 
  * none
 
-<h5 id="locations.destroy">destroy()</h5>
+<h4 id="locations.destroy">destroy()</h4>
 
 Remove and Clean Up the Rendition.
 
@@ -130,7 +130,7 @@ Arguments:
 
  * none
 
-<h5 id="locations.direction">direction(direction)</h5>
+<h4 id="locations.direction">direction(direction)</h4>
 
 Adjust the direction of the locations.
 
@@ -140,7 +140,7 @@ Arguments:
 
  * direction (string) - the direction for the locations.
 
-<h5 id="locations.display">display(target)</h5>
+<h4 id="locations.display">display(target)</h4>
 
 Display a point in the book.
 
@@ -157,7 +157,7 @@ Arguments:
    to 1, that determines the location in the book to be displayed.
 
 
-<h5 id="locations.flow">flow(flow)</h5>
+<h4 id="locations.flow">flow(flow)</h4>
 
 Adjust the flow of the locations to paginated or scrolled
 (scrolled-continuous Vs scrolled-doc are handled by different view
@@ -170,7 +170,7 @@ Arguments
  * flow (string) - the flow to be set.
 
 
-<h5 id="locations.getContents">getContents()</h5>
+<h4 id="locations.getContents">getContents()</h4>
 
 Get the Contents object of each rendered view.
 
@@ -181,7 +181,7 @@ Arguments:
 
  * none
 
-<h5 id="locations.getRange">getRange(cfi, ignoreClass)</h5>
+<h4 id="locations.getRange">getRange(cfi, ignoreClass)</h4>
 
 Get a Range from a Visible CFI.
 
@@ -192,7 +192,7 @@ Arguments:
  * cfi (string) - An EpubCFI string defining the range.
  * ignoreClass (string) - a class to be ignored???
 
-<h5 id="locations.layout">layout()</h5>
+<h4 id="locations.layout">layout()</h4>
 
 Adjust the laout of the locations to reflowable or pre-paginated.
 
@@ -203,7 +203,7 @@ Arguments:
  * settings (object) - ???
 
 
-<h5 id="locations.moveTo">moveTo(offset)</h5>
+<h4 id="locations.moveTo">moveTo(offset)</h4>
 
 Move the Rendition to a specific offset. Usually you would be better off
 calling display().
@@ -215,7 +215,7 @@ Arguments:
  * offset (object) - ???
 
 
-<h5 id="locations.next">next()</h5>
+<h4 id="locations.next">next()</h4>
 
 Got to the next "page" in the locations.
 
@@ -226,7 +226,7 @@ Arguments:
 
  * none
 
-<h5 id="locations.prev">prev()</h5>
+<h4 id="locations.prev">prev()</h4>
 
 Got to the previous "page" in the locations.
 
@@ -237,7 +237,7 @@ Arguments:
 
  * none
 
-<h5 id="locations.reportLocation">reportLocation()</h5>
+<h4 id="locations.reportLocation">reportLocation()</h4>
 
 Report the current location.
 
@@ -247,7 +247,7 @@ Arguments:
 
  * none
 
-<h5 id="locations.requireManager">requireManager(manager)</h5>
+<h4 id="locations.requireManager">requireManager(manager)</h4>
 
 Require the manager from the passed string, or as a class function.
 
@@ -258,7 +258,7 @@ Arguments
  * `manager` (string\|object) ???
 
 
-<h5 id="locations.resize">resize([width], [height])</h5>
+<h4 id="locations.resize">resize([width], [height])</h4>
 
 Trigger a resoze of the views.
 
@@ -269,7 +269,7 @@ Arguments:
  * `width` (number) the width of the view.
  * `height` (number) the height of the view.
 
-<h5 id="locations.setManager">setManager(manager)</h5>
+<h4 id="locations.setManager">setManager(manager)</h4>
 
 Set the manager function.
 
@@ -279,7 +279,7 @@ Arguments:
 
  * `manager` (function) set the manager function to the given function.
 
-<h5 id="locations.spread">spread(spread, min)</h5>
+<h4 id="locations.spread">spread(spread, min)</h4>
 
 Adjust if the locations uses spreads.
 
@@ -290,7 +290,7 @@ Arguments:
  * spread (string) - 'none' or 'auto'.
  * min (int) - minimum width to use spreads at.
 
-<h5 id="locations.start">start()</h5>
+<h4 id="locations.start">start()</h4>
 
 Start the rendering.
 
@@ -300,7 +300,7 @@ Arguments:
 
  * none
 
-<h5 id="locations.views">views()</h5>
+<h4 id="locations.views">views()</h4>
 
 Get the views member from the manager.
 

@@ -1,4 +1,4 @@
-<h3 id="layout">Layout(url, [options])</h3>
+<h2 id="layout">Layout(url, [options])</h2>
 
 Constructs a new epubjs Layout object for the book at the given url.
 
@@ -6,6 +6,6 @@ Constructs a new epubjs Layout object for the book at the given url.
 const book = new Book('https://epub.server.example.com/path/to/book.epub');
 ```
 
-<h4 id='book.methods'>Methods</h4>
+<h3 id='book.methods'>Methods</h3>
 
 xxx

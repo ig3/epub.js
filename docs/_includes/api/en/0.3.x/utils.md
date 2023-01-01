@@ -1,4 +1,4 @@
-<h3 id="utils">Utils(url, [options])</h3>
+<h2 id="utils">Utils(url, [options])</h2>
 
 Constructs a new epubjs Book object for the book at the given url.
 
@@ -6,5 +6,5 @@ Constructs a new epubjs Book object for the book at the given url.
 const book = new Book('https://epub.server.example.com/path/to/book.epub');
 ```
 
-<h4 id='utils.methods'>Methods</h4>
+<h3 id='utils.methods'>Methods</h3>
 

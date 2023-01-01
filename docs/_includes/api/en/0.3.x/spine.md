@@ -1,8 +1,8 @@
-<h3 id="spine">Spine</h3>
+<h2 id="spine">Spine</h2>
 
 The Spine object deals with spine of a book.
 
-<h4 id="spine.constructor">Constructor: new Spine()</h4>
+<h3 id="spine.constructor">Constructor: new Spine()</h3>
 
 Constructs a new, empty Spine object.
 
@@ -15,10 +15,10 @@ Arguments:
 
 Returns: an instance of Spine.
 
-<h4 id='spine.methods'>Methods</h4>
+<h3 id='spine.methods'>Methods</h3>
 
 
-<h5 id="spine.unpack">unpack(package, resolver, canonical)</h5>
+<h4 id="spine.unpack">unpack(package, resolver, canonical)</h4>
 
 Populate the Spine instance with the content of the spine element of the
 opf of the book.
@@ -32,7 +32,7 @@ Arguments:
  * resolver (function)
  * canonical (function) 
 
-<h5 id="spine.get"> get([target])</h5>
+<h4 id="spine.get"> get([target])</h4>
 
 Returns: (Section)  an item from the spine.
 
@@ -48,7 +48,7 @@ If `target` is a number, it is an index into the spine array.
 If `target` is a string it may be an epubcfi, an ID prefixed by '#' or an
 href value. The corresponding spine element is returned.
 
-<h5 id="spine.parse">parse(contents, cfiBase, chars)</h5>
+<h4 id="spine.parse">parse(contents, cfiBase, chars)</h4>
 
 Parse the contents of a single section (spine item) of the book, generating
 an array of ranges of maximum length 150 characters.
@@ -69,7 +69,7 @@ Arguments:
 The content must have a `body` element. The text nodes within the body
 element are processed. 
 
-<h5 id="spine.attachTo">attachTo(element)</h5>
+<h4 id="spine.attachTo">attachTo(element)</h4>
 
 Attach the spine container to the given element in the DOM. The
 container must be attached before the rendering can begin.
@@ -81,7 +81,7 @@ Arguments:
  * element (element) - The DOM element to which the container should be
    attached.
 
-<h5 id="spine.clear">clear()</h5>
+<h4 id="spine.clear">clear()</h4>
 
 Clear the rendered views.
 
@@ -91,7 +91,7 @@ Arguments:
 
  * none
 
-<h5 id="spine.currentLocation">currentLocation()</h5>
+<h4 id="spine.currentLocation">currentLocation()</h4>
 
 Get the CurrentLocation object.
 
@@ -102,7 +102,7 @@ Arguments:
 
  * none
 
-<h5 id="spine.destroy">destroy()</h5>
+<h4 id="spine.destroy">destroy()</h4>
 
 Remove and Clean Up the Rendition.
 
@@ -112,7 +112,7 @@ Arguments:
 
  * none
 
-<h5 id="spine.direction">direction(direction)</h5>
+<h4 id="spine.direction">direction(direction)</h4>
 
 Adjust the direction of the spine.
 
@@ -122,7 +122,7 @@ Arguments:
 
  * direction (string) - the direction for the spine.
 
-<h5 id="spine.display">display(target)</h5>
+<h4 id="spine.display">display(target)</h4>
 
 Display a point in the book.
 
@@ -139,7 +139,7 @@ Arguments:
    to 1, that determines the location in the book to be displayed.
 
 
-<h5 id="spine.flow">flow(flow)</h5>
+<h4 id="spine.flow">flow(flow)</h4>
 
 Adjust the flow of the spine to paginated or scrolled
 (scrolled-continuous Vs scrolled-doc are handled by different view
@@ -152,7 +152,7 @@ Arguments
  * flow (string) - the flow to be set.
 
 
-<h5 id="spine.getContents">getContents()</h5>
+<h4 id="spine.getContents">getContents()</h4>
 
 Get the Contents object of each rendered view.
 
@@ -163,7 +163,7 @@ Arguments:
 
  * none
 
-<h5 id="spine.getRange">getRange(cfi, ignoreClass)</h5>
+<h4 id="spine.getRange">getRange(cfi, ignoreClass)</h4>
 
 Get a Range from a Visible CFI.
 
@@ -174,7 +174,7 @@ Arguments:
  * cfi (string) - An EpubCFI string defining the range.
  * ignoreClass (string) - a class to be ignored???
 
-<h5 id="spine.layout">layout()</h5>
+<h4 id="spine.layout">layout()</h4>
 
 Adjust the laout of the spine to reflowable or pre-paginated.
 
@@ -185,7 +185,7 @@ Arguments:
  * settings (object) - ???
 
 
-<h5 id="spine.moveTo">moveTo(offset)</h5>
+<h4 id="spine.moveTo">moveTo(offset)</h4>
 
 Move the Rendition to a specific offset. Usually you would be better off
 calling display().
@@ -197,7 +197,7 @@ Arguments:
  * offset (object) - ???
 
 
-<h5 id="spine.next">next()</h5>
+<h4 id="spine.next">next()</h4>
 
 Got to the next "page" in the spine.
 
@@ -208,7 +208,7 @@ Arguments:
 
  * none
 
-<h5 id="spine.prev">prev()</h5>
+<h4 id="spine.prev">prev()</h4>
 
 Got to the previous "page" in the spine.
 
@@ -219,7 +219,7 @@ Arguments:
 
  * none
 
-<h5 id="spine.reportLocation">reportLocation()</h5>
+<h4 id="spine.reportLocation">reportLocation()</h4>
 
 Report the current location.
 
@@ -229,7 +229,7 @@ Arguments:
 
  * none
 
-<h5 id="spine.requireManager">requireManager(manager)</h5>
+<h4 id="spine.requireManager">requireManager(manager)</h4>
 
 Require the manager from the passed string, or as a class function.
 
@@ -240,7 +240,7 @@ Arguments
  * `manager` (string\|object) ???
 
 
-<h5 id="spine.resize">resize([width], [height])</h5>
+<h4 id="spine.resize">resize([width], [height])</h4>
 
 Trigger a resoze of the views.
 
@@ -251,7 +251,7 @@ Arguments:
  * `width` (number) the width of the view.
  * `height` (number) the height of the view.
 
-<h5 id="spine.setManager">setManager(manager)</h5>
+<h4 id="spine.setManager">setManager(manager)</h4>
 
 Set the manager function.
 
@@ -261,7 +261,7 @@ Arguments:
 
  * `manager` (function) set the manager function to the given function.
 
-<h5 id="spine.spread">spread(spread, min)</h5>
+<h4 id="spine.spread">spread(spread, min)</h4>
 
 Adjust if the spine uses spreads.
 
@@ -272,7 +272,7 @@ Arguments:
  * spread (string) - 'none' or 'auto'.
  * min (int) - minimum width to use spreads at.
 
-<h5 id="spine.start">start()</h5>
+<h4 id="spine.start">start()</h4>
 
 Start the rendering.
 
@@ -282,7 +282,7 @@ Arguments:
 
  * none
 
-<h5 id="spine.views">views()</h5>
+<h4 id="spine.views">views()</h4>
 
 Get the views member from the manager.
 

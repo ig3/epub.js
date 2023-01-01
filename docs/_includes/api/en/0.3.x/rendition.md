@@ -1,10 +1,10 @@
-<h3 id="rendition">Rendition</h3>
+<h2 id="rendition">Rendition</h2>
 
 The Rendition object encapsulates the rendering of an epub book. It has
 methods for attaching the rendition to a DOM element, getting and setting
 the location, etc.
 
-<h4 id="rendition.constructor">Constructor: new Rendition(book, [options])</h4>
+<h3 id="rendition.constructor">Constructor: new Rendition(book, [options])</h3>
 
 Constructs a new Rendition object for the rendition at the given Book.
 
@@ -45,10 +45,10 @@ The `options` argument can have the following fields:
  **Default**: undefined.
 
 
-<h4 id='rendition.methods'>Methods</h4>
+<h3 id='rendition.methods'>Methods</h3>
 
 
-<h5 id="rendition.attachTo">attachTo(element)</h5>
+<h4 id="rendition.attachTo">attachTo(element)</h4>
 
 Attach the rendition container to the given element in the DOM. The
 container must be attached before the rendering can begin.
@@ -60,7 +60,7 @@ Arguments:
  * element (element) - The DOM element to which the container should be
    attached.
 
-<h5 id="rendition.clear">clear()</h5>
+<h4 id="rendition.clear">clear()</h4>
 
 Clear the rendered views.
 
@@ -70,7 +70,7 @@ Arguments:
 
  * none
 
-<h5 id="rendition.currentLocation">currentLocation()</h5>
+<h4 id="rendition.currentLocation">currentLocation()</h4>
 
 Get the CurrentLocation object.
 
@@ -81,7 +81,7 @@ Arguments:
 
  * none
 
-<h5 id="rendition.destroy">destroy()</h5>
+<h4 id="rendition.destroy">destroy()</h4>
 
 Remove and Clean Up the Rendition.
 
@@ -91,7 +91,7 @@ Arguments:
 
  * none
 
-<h5 id="rendition.direction">direction(direction)</h5>
+<h4 id="rendition.direction">direction(direction)</h4>
 
 Adjust the direction of the rendition.
 
@@ -101,7 +101,7 @@ Arguments:
 
  * direction (string) - the direction for the rendition.
 
-<h5 id="rendition.display">display(target)</h5>
+<h4 id="rendition.display">display(target)</h4>
 
 Display a point in the book.
 
@@ -127,7 +127,7 @@ Otherwise, `target` must be an integer index into the spine, or an epubcfi
 string, ID string (prefixed by '#') or an href string that matches one of
 the spine elements.
 
-<h5 id="rendition.flow">flow(flow)</h5>
+<h4 id="rendition.flow">flow(flow)</h4>
 
 Adjust the flow of the rendition to paginated or scrolled
 (scrolled-continuous Vs scrolled-doc are handled by different view
@@ -140,7 +140,7 @@ Arguments
  * flow (string) - the flow to be set.
 
 
-<h5 id="rendition.getContents">getContents()</h5>
+<h4 id="rendition.getContents">getContents()</h4>
 
 Get the Contents object of each rendered view.
 
@@ -151,7 +151,7 @@ Arguments:
 
  * none
 
-<h5 id="rendition.getRange">getRange(cfi, ignoreClass)</h5>
+<h4 id="rendition.getRange">getRange(cfi, ignoreClass)</h4>
 
 Get a Range from a Visible CFI.
 
@@ -162,7 +162,7 @@ Arguments:
  * cfi (string) - An EpubCFI string defining the range.
  * ignoreClass (string) - a class to be ignored???
 
-<h5 id="rendition.layout">layout()</h5>
+<h4 id="rendition.layout">layout()</h4>
 
 Adjust the laout of the rendition to reflowable or pre-paginated.
 
@@ -173,7 +173,7 @@ Arguments:
  * settings (object) - ???
 
 
-<h5 id="rendition.moveTo">moveTo(offset)</h5>
+<h4 id="rendition.moveTo">moveTo(offset)</h4>
 
 Move the Rendition to a specific offset. Usually you would be better off
 calling display().
@@ -185,7 +185,7 @@ Arguments:
  * offset (object) - ???
 
 
-<h5 id="rendition.next">next()</h5>
+<h4 id="rendition.next">next()</h4>
 
 Got to the next "page" in the rendition.
 
@@ -196,7 +196,7 @@ Arguments:
 
  * none
 
-<h5 id="rendition.prev">prev()</h5>
+<h4 id="rendition.prev">prev()</h4>
 
 Got to the previous "page" in the rendition.
 
@@ -207,7 +207,7 @@ Arguments:
 
  * none
 
-<h5 id="rendition.reportLocation">reportLocation()</h5>
+<h4 id="rendition.reportLocation">reportLocation()</h4>
 
 Report the current location.
 
@@ -217,7 +217,7 @@ Arguments:
 
  * none
 
-<h5 id="rendition.requireManager">requireManager(manager)</h5>
+<h4 id="rendition.requireManager">requireManager(manager)</h4>
 
 Require the manager from the passed string, or as a class function.
 
@@ -228,7 +228,7 @@ Arguments
  * `manager` (string\|object) ???
 
 
-<h5 id="rendition.resize">resize([width], [height])</h5>
+<h4 id="rendition.resize">resize([width], [height])</h4>
 
 Trigger a resoze of the views.
 
@@ -239,7 +239,7 @@ Arguments:
  * `width` (number) the width of the view.
  * `height` (number) the height of the view.
 
-<h5 id="rendition.setManager">setManager(manager)</h5>
+<h4 id="rendition.setManager">setManager(manager)</h4>
 
 Set the manager function.
 
@@ -249,7 +249,7 @@ Arguments:
 
  * `manager` (function) set the manager function to the given function.
 
-<h5 id="rendition.spread">spread(spread, min)</h5>
+<h4 id="rendition.spread">spread(spread, min)</h4>
 
 Adjust if the rendition uses spreads.
 
@@ -260,7 +260,7 @@ Arguments:
  * spread (string) - 'none' or 'auto'.
  * min (int) - minimum width to use spreads at.
 
-<h5 id="rendition.start">start()</h5>
+<h4 id="rendition.start">start()</h4>
 
 Start the rendering.
 
@@ -270,7 +270,7 @@ Arguments:
 
  * none
 
-<h5 id="rendition.views">views()</h5>
+<h4 id="rendition.views">views()</h4>
 
 Get the views member from the manager.
 
@@ -281,7 +281,7 @@ Arguments:
  * none
 
 
-<h4 id="rendition.managers.default">Default Display Manager</h4>
+<h3 id="rendition.managers.default">Default Display Manager</h3>
 
 The default display manager (selected by options.manager = 'default' or
 undefined) provides a paginated display.
@@ -313,7 +313,7 @@ If the display is 'full size' then the window is scrolled. Otherwise, the
 container is scrolled, when scrolling to a position in a chapter.
 
 
-<h5 id="rendition.ViewManager">ViewManager</h5>
+<h4 id="rendition.ViewManager">ViewManager</h4>
 
 There are two built-in view managers: 'default' and 'continuous'.
 
@@ -325,7 +325,7 @@ section is visible with a scrollbar.
 Both present a chapter/section at a time. The paginated view makes part of
 the chapter/section visible at a time.
 
-<h6>Default View Manager</h6>
+<h5>Default View Manager</h5>
 
 The default view manager renders a paginated view of the book.
 
@@ -338,10 +338,10 @@ in the text. An epubcfi, technically, specifies a point before a character,
 rather than a character, but it is a distinction without significance in
 this use.
 
-<h6>Continuous View Manager</h6>
+<h5>Continuous View Manager</h5>
 
 
-<h5>Views</h5>
+<h4>Views</h4>
 
 There are two views: iframe and inline.
 
@@ -354,7 +354,7 @@ issue.
 
 The default view appears to be 'iframe'.
 
-<h6>iframe</h6>
+<h5>iframe</h5>
 
 Each instance has an id: 'epubjs-view-' + uuid(), so they are all unique
 and there might be more than one in a document at a time.

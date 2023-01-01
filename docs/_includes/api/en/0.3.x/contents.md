@@ -1,9 +1,9 @@
-<h3 id="contents">Contents</h3>
+<h2 id="contents">Contents</h2>
 
 The Contents object handles DOM manipulation, queries and events for View
 contents. The contents are typically the content of a chapter of the book.
 
-<h4 id="contents.constructor">Constructor: new Contents(doc, content, cfiBase, sectionIndex)</h4>
+<h3 id="contents.constructor">Constructor: new Contents(doc, content, cfiBase, sectionIndex)</h3>
 
 Constructs a new Contents object for the content of the section (a.k.a.
 chapter) of the given chapter of the book. The cfiBase and sectionIndex
@@ -26,9 +26,9 @@ Arguments:
 
 Returns: an instance of Contents.
 
-<h4 id='contents.methods'>Methods</h4>
+<h3 id='contents.methods'>Methods</h3>
 
-<h5>contentHeight(height)</h5>
+<h4>contentHeight(height)</h4>
 
 Get or set the height of the content element or, if that is not set, the
 body of the content document.
@@ -51,7 +51,7 @@ The height of the window is always returned. But, which window??? Presumably
 the window of the iframe presenting the content.
 
 
-<h5>contentWidth(width)</h5>
+<h4>contentWidth(width)</h4>
 
 Get or set the width of the content element or, if that is not set, the
 body of the content document.
@@ -73,11 +73,11 @@ Therefore, the width cannot be set to 0.
 The width of the window is always returned. But, which window??? Presumably
 the window of the iframe presenting the content.
 
-<h5 id="contents.listenedEvents">listenedEvents()</h5>
+<h4 id="contents.listenedEvents">listenedEvents()</h4>
 
 Get the DOM events that are listened for.
 
-<h5>height(height)</h5>
+<h4>height(height)</h4>
 
 Get or set the height of the content.
 
@@ -90,7 +90,7 @@ Arguments:
 `height` is an integer number of pixels or a string compatible with the
 height style of the iframe.
 
-<h5>locationOf(target, ignoreClass)</h5>
+<h4>locationOf(target, ignoreClass)</h4>
 
 Get the location offset of the epubcfi or #id.
 
@@ -109,7 +109,7 @@ If there is no document, { left: 0, top: 0 } is returned.
 If `target` is an ID then it is the ID of an element in the DOM of the
 content document.
 
-<h5>overflow(overflow)</h5>
+<h4>overflow(overflow)</h4>
 
 Gets or sets the overflow css style of the content (i.e. documentElement).
 
@@ -127,15 +127,15 @@ documentElement is set to it.
 The value of the overflow property of the computed style of the
 documentElement is always returned.
 
-<h5>scrollHeight</h5>
+<h4>scrollHeight</h4>
 
 Gets the scroll height of the documentElement, in pixels.
 
-<h5>scrollWidth</h5>
+<h4>scrollWidth</h4>
 
 Gets the scroll width of the documentElement, in pixels.
 
-<h5>textHeight()</h5>
+<h4>textHeight()</h4>
 
 Get the height of the text using Range.
 
@@ -151,7 +151,7 @@ of the content node (DOM node, presumably) then gets the bounding client
 rectangle of the selection and, if there is a border with height, adds the
 height of the border.
 
-<h5>textWidth()</h5>
+<h4>textWidth()</h4>
 
 Get the width of the text using Range.
 
@@ -167,7 +167,7 @@ of the content node (DOM node, presumably) then gets the bounding client
 rectangle of the selection and, if there is a border with width, adds the
 width of the border.
 
-<h5>width(width)</h5>
+<h4>width(width)</h4>
 
 Get or set the width of the content.
 

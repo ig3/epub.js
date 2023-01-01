@@ -1,9 +1,9 @@
-<h3 id="mapping">Mapping</h3>
+<h2 id="mapping">Mapping</h2>
 
 The Mapping object maps text locations to EpubCFI ranges.
 
-<h4 id="mapping.constructor">Constructor: new Mapping(layout, direction,
-axis, dev)<h4>
+<h3 id="mapping.constructor">Constructor: new Mapping(layout, direction,
+axis, dev)<h3>
 
 Constructs a new Mapping object.
 
@@ -19,9 +19,9 @@ Arguments:
 
 Returns: an instance of Mapping.
 
-<h4 id='mapping.methods'>Methods</h4>
+<h3 id='mapping.methods'>Methods</h3>
 
-<h5 id="mapping.findStart">findStart(root, start, end)</h5>
+<h4 id="mapping.findStart">findStart(root, start, end)</h4>
 
 Find the Range that covers the start of the page.
 
@@ -42,7 +42,7 @@ is from left to right or top to bottom, according to axis. This may be true
 of simple documents but might not be true of documents with positioned
 elements.
 
-<h5 id="mapping.page">page(contents, cfiBase, start, end)</h5>
+<h4 id="mapping.page">page(contents, cfiBase, start, end)</h4>
 
 Find the EpubCFI for the start and end of a page.
 
@@ -65,7 +65,7 @@ The content of the section is rendered in its entirety, split into pages by
 CSS styling. Each page is at an offset from the start of the content:
 vertical or horizontal, according to the axis.
 
-<h5 id="mapping.section">section(view)</h5>
+<h4 id="mapping.section">section(view)</h4>
 
 Find CFI pairs for entire section at once.
 

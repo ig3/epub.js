@@ -1,9 +1,9 @@
-<h3 id="book">Book</h3>
+<h2 id="book">Book</h2>
 
 The Book object encapsulates an epub book. It has methods for opening,
 closing, rendering and navigating within the book.
 
-<h4 id="book.constructor">Constructor: new Book(url, [options])</h4>
+<h3 id="book.constructor">Constructor: new Book(url, [options])</h3>
 
 Constructs a new epubjs Book object for the book at the given url.
 
@@ -47,10 +47,10 @@ The continuous view manager provides a continuous display presenting one
 chapter / section at a time, complete with vertical scrolling.
 
 
-<h4 id='book.methods'>Methods</h4>
+<h3 id='book.methods'>Methods</h3>
 
 
-<h5 id="book.open">open(input, what)</h5>
+<h4 id="book.open">open(input, what)</h4>
 
 Open an epub from a URL or ArrayBuffer.
 
@@ -63,7 +63,7 @@ Arguments:
    - force opening as a certain type. **Default**: ???
 
 
-<h6>what = 'binary'</h6>
+<h5>what = 'binary'</h5>
 
 `input` should be a zip file in the form of a String, Array of bytes,
 ArrayBuffer, Uint8Array, Buffer, Blob or a Promise returning one of these.
@@ -81,7 +81,7 @@ The type of input varies with `what`:
  * undefined
 
 
-<h5 id="book.load">load(path></h5>
+<h4 id="book.load">load(path></h4>
 
 Load a resource from the Book.
 
@@ -91,7 +91,7 @@ Arguments:
 
  * path (string) - path to the resource to load.
 
-<h5 id="book.resolve">resolve(path, [absolute])</h5>
+<h4 id="book.resolve">resolve(path, [absolute])</h4>
 
 Resolve a path to its absolute position in the Book.
 
@@ -102,7 +102,7 @@ Arguments:
  * path (string) - the path to resolve
  * absolute (boolean) - force resolving the full URL if true
 
-<h5 id="book.canonical">canonical(path)</h5>
+<h4 id="book.canonical">canonical(path)</h4>
 
 Get a canonical link to a path.
 
@@ -112,7 +112,7 @@ Arguments:
 
  * path (string) - ???
 
-<h5 id="book.section">section(target)</h5>
+<h4 id="book.section">section(target)</h4>
 
 Get a Section of the Book from the Spine.
 
@@ -125,7 +125,7 @@ Arguments:
  * target (string) - the section identifier
 
 
-<h5 id="book.renderto">renderTo(element, [options])</h5>
+<h4 id="book.renderto">renderTo(element, [options])</h4>
 
 Render the book to a DOM element.
 
@@ -144,7 +144,7 @@ A new Rendition is constructed and then attached to the given element by
 appending it as a child element. This would typically be to a `div` element
 but other elements are possible.
 
-<h5 id="book.setRequestCredentials">setRequestCredentials(credentials)</h5>o
+<h4 id="book.setRequestCredentials">setRequestCredentials(credentials)</h4>o
 
 Set if request should use withCredentials.
 
@@ -156,7 +156,7 @@ Arguments:
 
 How are the actual credentials set? 
 
-<h5 id="book.setRequestHeaders">setRequestHeaders(headers)</h5>
+<h4 id="book.setRequestHeaders">setRequestHeaders(headers)</h4>
 
 Set headers that should be included with the request.
 
@@ -166,7 +166,7 @@ Arguments:
 
  * headers (object) - the set of headers to include
 
-<h5 id="book.coverUrl">coverUrl()</h5>
+<h4 id="book.coverUrl">coverUrl()</h4>
 
 Get the URL of the cover image.
 
@@ -174,14 +174,14 @@ Returns: (string) the URL of the cover image
 
 Arguments:
 
-<h5 id="book.getRange">getRange(cfiRange)</h5>
+<h4 id="book.getRange">getRange(cfiRange)</h4>
 
 Find a DOM Range for a given CFI Range.
 
 Returns: (Range) - the DOM Range corresponding to the given CFI Range
 
 
-<h5 id="book.key">key([identifier])</h5>
+<h4 id="book.key">key([identifier])</h4>
 
 Generated the Book Key using the identifier in the manifest or other string
 provided.
@@ -193,7 +193,7 @@ Arguments:
  * identifier (string) - an identifier to be used insead of the identifier
    in the manifest. **Default**: the identifier in the manifest.
 
-<h5 id="book.destroy">destroy()</h5>
+<h4 id="book.destroy">destroy()</h4>
 
 Destroy the Book instance and all associated objects.
 
