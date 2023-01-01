@@ -114,6 +114,9 @@ API documentation is available at [epubjs.org/documentation/0.3/](http://epubjs.
 
 A Markdown version is included in the repo at [documentation/API.md](https://github.com/futurepress/epub.js/blob/master/documentation/md/API.md)
 
+Further API documentation is available at
+[https://ig3.github.io/epub.js/](https://ig3.github.io/epub.js/)
+
 ## Running Locally
 
 install [node.js](http://nodejs.org/)
