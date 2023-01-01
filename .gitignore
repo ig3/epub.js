@@ -11,3 +11,6 @@ documentation/html
 types/*.js
 docs/_site
 docs/Gemfile.lock
+*~
+*.swp
+*.swo
