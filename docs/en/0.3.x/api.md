@@ -14,6 +14,10 @@ redirect_from: "/0.3.x/api.html"
   {% include api/{{ page.lang }}/0.3.x/rendition.md %}
   {% include api/{{ page.lang }}/0.3.x/contents.md %}
   {% include api/{{ page.lang }}/0.3.x/epubcfi.md %}
+  {% include api/{{ page.lang }}/0.3.x/layout.md %}
+  {% include api/{{ page.lang }}/0.3.x/locations.md %}
+  {% include api/{{ page.lang }}/0.3.x/mapping.md %}
+  {% include api/{{ page.lang }}/0.3.x/spine.md %}
   {% include api/{{ page.lang }}/0.3.x/utils.md %}
 
 </div>

@@ -22,6 +22,12 @@
     </ul>
     </li>
 
+    <li id="contents-api"><a href="#contents">Contents</a>
+    </li>
+
+    <li id="epubcfi-api"><a href="#epubcfi">EpubCFI</a>
+    </li>
+
     <li id="rendition-api"><a href="#rendition">Rendition</a>
     <ul id="rendition-menu">
       <li><em>Methods</em></li>
@@ -49,10 +55,16 @@
     </ul>
     </li>
 
-    <li id="contents-api"><a href="#contents">Contents</a>
+    <li id="layout-api"><a href="#layout">Layout</a>
     </li>
 
-    <li id="epubcfi-api"><a href="#epubcfi">EpubCFI</a>
+    <li id="locations-api"><a href="#locations">Locations</a>
+    </li>
+
+    <li id="mapping-api"><a href="#mapping">Mapping</a>
+    </li>
+
+    <li id="spine-api"><a href="#spine">Spine</a>
     </li>
 
     <li id="utils-api"><a href="#utils">Utils</a>
