@@ -50,6 +50,24 @@ The `options` argument can have the following fields:
 <h3 id='locations.methods'>Methods</h3>
 
 
+<h4 id="locations.generate">generate(chars)</h4>
+
+Generate the array of locations.
+
+Returns: (Promise) - a promise that resolves to the arry of locations when
+it has been generated.
+
+Arguments:
+
+ * `chars` (number) - the number of chars in each location.
+
+All content documents listed in the spine of the book are parsed. Their
+text content is split into segments of `chars` characters and a Range is
+produced for each segment. These ranges are serialized to EpubCFI strings
+and accumulated into the `locations` array. Thus, the `locations` array is
+an array of EpubCFI strings that specify the ranges of characters, each
+`chars` characters long.
+
 <h4 id="locations.cfiFromPercentage">cfiFromPercentage(percentage)</h4>
 
 Returns: (string) the epubcfi of the location range that begins at
@@ -111,7 +129,7 @@ Arguments:
 
 <h4 id="locations.currentLocation">currentLocation()</h4>
 
-Get the CurrentLocation object.
+Get or Set the CurrentLocation object.
 
 Returns: (displayedLocation\|Promise) The displayedLocation object with the
 current location or a Promise that resolves to this.
@@ -122,189 +140,9 @@ Arguments:
 
 <h4 id="locations.destroy">destroy()</h4>
 
-Remove and Clean Up the Rendition.
+Remove and Clean Up the Locations instance.
 
 Returns: ???
-
-Arguments:
-
- * none
-
-<h4 id="locations.direction">direction(direction)</h4>
-
-Adjust the direction of the locations.
-
-Returns: ???
-
-Arguments:
-
- * direction (string) - the direction for the locations.
-
-<h4 id="locations.display">display(target)</h4>
-
-Display a point in the book.
-
-The request will be added to the rendering Queue, so it will wait until the
-book is opened, rendering started and all previously queued rendering tasks
-have finished.
-
-Returns: (Promise) a promise that resolves to ??? when the given target has
-been displayed in the locations.
-
-Arguments:
-
- * target (string) - URL, EpubCFI or floating point number in the range 0
-   to 1, that determines the location in the book to be displayed.
-
-
-<h4 id="locations.flow">flow(flow)</h4>
-
-Adjust the flow of the locations to paginated or scrolled
-(scrolled-continuous Vs scrolled-doc are handled by different view
-managers).
-
-Returns: ???
-
-Arguments
-
- * flow (string) - the flow to be set.
-
-
-<h4 id="locations.getContents">getContents()</h4>
-
-Get the Contents object of each rendered view.
-
-Returns: (Contents[]) Array of Contents objects, one for each rendered
-view.
-
-Arguments:
-
- * none
-
-<h4 id="locations.getRange">getRange(cfi, ignoreClass)</h4>
-
-Get a Range from a Visible CFI.
-
-Returns: (range) a range object.
-
-Arguments:
-
- * cfi (string) - An EpubCFI string defining the range.
- * ignoreClass (string) - a class to be ignored???
-
-<h4 id="locations.layout">layout()</h4>
-
-Adjust the laout of the locations to reflowable or pre-paginated.
-
-Returns: ???
-
-Arguments:
-
- * settings (object) - ???
-
-
-<h4 id="locations.moveTo">moveTo(offset)</h4>
-
-Move the Rendition to a specific offset. Usually you would be better off
-calling display().
-
-Returns: ???
-
-Arguments:
-
- * offset (object) - ???
-
-
-<h4 id="locations.next">next()</h4>
-
-Got to the next "page" in the locations.
-
-Returns: (Promise) A Promise that resolves when the locations has been
-updated to display the next "page".
-
-Arguments:
-
- * none
-
-<h4 id="locations.prev">prev()</h4>
-
-Got to the previous "page" in the locations.
-
-Returns: (Promise) A Promise that resolves when the locations has been
-updated to display the previous "page".
-
-Arguments:
-
- * none
-
-<h4 id="locations.reportLocation">reportLocation()</h4>
-
-Report the current location.
-
-Returns: ???
-
-Arguments:
-
- * none
-
-<h4 id="locations.requireManager">requireManager(manager)</h4>
-
-Require the manager from the passed string, or as a class function.
-
-Returns: ???
-
-Arguments
-
- * `manager` (string\|object) ???
-
-
-<h4 id="locations.resize">resize([width], [height])</h4>
-
-Trigger a resoze of the views.
-
-Returns: ???
-
-Arguments:
-
- * `width` (number) the width of the view.
- * `height` (number) the height of the view.
-
-<h4 id="locations.setManager">setManager(manager)</h4>
-
-Set the manager function.
-
-Returns: ???
-
-Arguments:
-
- * `manager` (function) set the manager function to the given function.
-
-<h4 id="locations.spread">spread(spread, min)</h4>
-
-Adjust if the locations uses spreads.
-
-Returns: ???
-
-Arguments:
-
- * spread (string) - 'none' or 'auto'.
- * min (int) - minimum width to use spreads at.
-
-<h4 id="locations.start">start()</h4>
-
-Start the rendering.
-
-Returns: (Promise) a Promise that resolves when rendering has started.
-
-Arguments:
-
- * none
-
-<h4 id="locations.views">views()</h4>
-
-Get the views member from the manager.
-
-Returns: (Views)
 
 Arguments:
 

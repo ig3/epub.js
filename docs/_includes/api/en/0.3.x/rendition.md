@@ -162,7 +162,7 @@ Arguments:
  * cfi (string) - An EpubCFI string defining the range.
  * ignoreClass (string) - a class to be ignored???
 
-<h4 id="rendition.layout">layout()</h4>
+<h4 id="rendition.layout">layout(settings)</h4>
 
 Adjust the laout of the rendition to reflowable or pre-paginated.
 

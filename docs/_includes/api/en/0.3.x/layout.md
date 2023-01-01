@@ -8,4 +8,3 @@ const book = new Book('https://epub.server.example.com/path/to/book.epub');
 
 <h3 id='book.methods'>Methods</h3>
 
-xxx
