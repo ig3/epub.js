@@ -1,8 +1,11 @@
 <ul>
   <li>
-    <p class="announcement-title">Express 5.0 beta documentation is now available.</p>
+    <p class="announcement-title">@ig3/epub.js forked December 2022.</p>
     <p markdown="1">
-     The beta <a href="{{ page.lang }}/5x/api.html">API documentation</a> is a work in progress.  For information on what's in the release, see the Express <a href="https://github.com/expressjs/express/blob/5.0/History.md">release history</a>.
+     [@ig3/epub.js](https://github.com/ig3/epub.js) was forked from
+     [futurepress/epub.js](https://github.com/futurepress/epub.js)
+     December 2022, to implement a minor enhancement and to add this
+     documentation.
     </p>
   </li>
 </ul>
