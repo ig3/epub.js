@@ -1,9 +1,8 @@
 ---
 layout: home
-title: Express - Node.js web application framework
+title: epub.js - a JavaScript library for rendering ePub documents
 menu: home
 lang: en
-redirect_from: "/en/index.html"
 ---
 <section id="home-content">
   {% include header/header-{{ page.lang }}.html %}
@@ -24,20 +23,17 @@ redirect_from: "/en/index.html"
 
   <div id="boxes" class="clearfix">
     <div id="web-applications">
-      <h3>Web Applications</h3> Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+      <h3>ePub Applications</h3> epub.js is a JavaScript library for
+      rendering [ePub](https://en.wikipedia.org/wiki/EPUB) documents
+      in the browser. It is a basis for building browser based ePub
+      reader applications.
     </div>
 
     <div id="apis">
-      <h3>APIs</h3> With a myriad of HTTP utility methods and middleware at your disposal, creating a robust API is quick and easy.
+      <h3>APIs</h3> epub.js provides simple APIs for loading, rendering and
+      navigating ePub documents.
     </div>
 
-    <div id="performance">
-      <h3>Performance</h3> Express provides a thin layer of fundamental web application features, without obscuring Node.js features that you know and love.
-    </div>
-
-    <div id="frameworks">
-      <h3>Frameworks</h3> Many <a href="{{ page.lang }}/resources/frameworks.html">popular frameworks</a> are based on Express.
-    </div>
   </div>
 
 </section>
