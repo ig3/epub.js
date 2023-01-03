@@ -1,5 +1,22 @@
 # Epub.js v0.3
 
+This is a fork of
+[futurepress/epub.js](https://github.com/futurepress/epub.js)
+
+This fork is available at
+[@ig3/epub.js](https://github.com/ig3/epub.js)
+
+Motivations for the fork were:
+
+ * To enhance epubcfi generation for Chinese text with few space characters
+ * To keep additional documentation of the objects and methods
+
+Additional documentation is available at
+[epub.js docs](https://ig3.github.io/epub.js/)
+and in the `docs` branch of the repository.
+
+## Original introduction
+
 ![FuturePress Views](http://fchasen.com/futurepress/fp.png)
 
 Epub.js is a JavaScript library for rendering ePub documents in the browser, across many devices.
