@@ -9,7 +9,7 @@ lang: en
   <div id="overlay"></div>
   <div id="homepage-leftpane" class="pane">
     <section id="description">
-        <div class="express"><a href="/">epub.js</a></div>
+        <div class="express"><a href="{{ site.baseurl }}/">@ig3/epub.js</a></div>
         <span class="description">A library for rendering <a href="https://en.wikipedia.org/wiki/EPUB">ePub</a> documents in the browser.</span>
     </section>
   </div>
@@ -22,14 +22,14 @@ lang: en
 
   <div id="boxes" class="clearfix">
     <div id="web-applications">
-      <h3>ePub Applications</h3> epub.js is a JavaScript library for
+      <h3>ePub Applications</h3> @ig3/epub.js is a JavaScript library for
       rendering [ePub](https://en.wikipedia.org/wiki/EPUB) documents
       in the browser. It is a basis for building browser based ePub
       reader applications.
     </div>
 
     <div id="apis">
-      <h3>APIs</h3> epub.js provides simple APIs for loading, rendering and
+      <h3>APIs</h3> @ig3/epub.js provides simple APIs for loading, rendering and
       navigating ePub documents.
     </div>
 

@@ -14,7 +14,7 @@
 
 body {
   font: 400 14px/1.6 "Open Sans", sans-serif;
-  background: url(/images/bg.jpg);
+  background: url(/epub.js/images/bg.jpg);
   margin: 0;
   padding: 0;
   color: #555;
@@ -120,7 +120,7 @@ strong, th {
 #announcements p:first-child {
   font-weight: bold;
   padding-left: 20px;
-  background-image: url(/images/announcement-icon.png);
+  background-image: url(/epub.js/images/announcement-icon.png);
   background-position: 0 3px;
   background-repeat: no-repeat;
   background-size: 14px 14px;
@@ -652,7 +652,7 @@ footer {
 }
 
 #fork {
-  background-image: url(/images/fork-icon.png);
+  background-image: url(/epub.js/images/fork-icon.png);
   background-size: 11px 16px;
   padding-left: 15px;
 }
@@ -660,11 +660,11 @@ footer {
 @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
 
   #fork {
-    background-image: url(/images/fork-icon@2x.png);
+    background-image: url(/epub.js/images/fork-icon@2x.png);
   }
 
   #announcements p:first-child {
-    background-image: url(/images/announcement-icon@2x.png);
+    background-image: url(/epub.js/images/announcement-icon@2x.png);
   }
 
 }
