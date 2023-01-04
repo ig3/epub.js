@@ -23,9 +23,9 @@ lang: en
   <div id="boxes" class="clearfix">
     <div id="web-applications">
       <h3>ePub Applications</h3> @ig3/epub.js is a JavaScript library for
-      rendering [ePub](https://en.wikipedia.org/wiki/EPUB) documents
-      in the browser. It is a basis for building browser based ePub
-      reader applications.
+      rendering <a href="https://en.wikipedia.org/wiki/EPUB">ePub</a>
+      documents in the browser. It is a basis for building browser based
+      ePub reader applications.
     </div>
 
     <div id="apis">
