@@ -1,0 +1,70 @@
+<header>
+  <div id="mobile-menu">
+      <div id="nav-button" class="fa fa-bars fa-2x button"></div>
+  </div>
+  <section id="logo"><a href="{{ site.baseurl }}/" class="express">@ig3/epub.js</a>
+  </section>
+  <div id="navbar">
+      <input id="q" placeholder="🔎 search">
+      <ul id="navmenu">
+          <li><a href="/" id="home-menu"{% if page.menu == 'home' %} class="active"{% endif %}>Home</a></li>
+          <li>
+              <ul id="getting-started-menu" class="menu">
+                  <li><a href="/{{ page.lang }}/starter/installing.html"{% if page.menu == 'starter' %} class="active"{% endif %}>Getting started</a>
+                      <ul>
+                          <li>
+                            <a href="{{ site.baseurl}}/{{ page.lang }}/starter/installing.html">
+                              Installing
+                            </a>
+                          </li>
+                          <li>
+                            <a href="{{ site.baseurl}}/{{ page.lang }}/starter/examples.html">
+                              Examples
+                            </a>
+                          </li>
+                          <li>
+                            <a href="{{ site.baseurl}}/{{ page.lang }}/starter/faq.html">
+                              FAQ
+                            </a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <ul id="guide-menu" class="menu">
+                <li><a href="{{ site.baseurl}}/{{ page.lang }}/guide/routing.html"{% if page.menu == 'guide' %} class="active"{% endif %}>Guide</a>
+                      <ul>
+                      </ul>
+                </li>
+              </ul>
+          </li>
+          <li>
+              <ul id="application-menu" class="menu">
+                <li><a href="{{ site.baseurl}}/{{ page.lang }}/4x/api.html"{% if page.menu == 'api' %} class="active"{% endif %}>API reference</a>
+                      <ul>
+                        <li><a href="{{ site.baseurl}}/{{ page.lang }}/0.3.x/api.html">0.3.x</a>
+                        </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <ul id="advanced-topics-menu" class="menu">
+                <li><a href="{{ site.baseurl}}/{{ page.lang }}/advanced/developing-template-engines.html"{% if page.menu == 'advanced' %} class="active"{% endif %}>Advanced topics</a>
+                      <ul>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <ul id="resources-menu" class="menu">
+                <li><a href="{{ site.baseurl}}/{{ page.lang }}/resources/glossary.html"{% if page.menu == 'resources' %} class="active"{% endif %}>Resources</a>
+                      <ul>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  </div>
+</header>
