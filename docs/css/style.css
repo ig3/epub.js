@@ -672,7 +672,6 @@ footer {
 /* navigation */
 
 #navbar {
-  padding-left: 5%;
   max-width: 1000px;
   position: relative;
   display: flex;
