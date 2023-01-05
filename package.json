@@ -1,11 +1,11 @@
 {
-  "name": "epubjs",
+  "name": "@ig3/epubjs",
   "version": "0.3.93",
   "description": "Parse and Render Epubs",
   "main": "lib/index.js",
   "module": "src/index.js",
   "types": "types/index.d.ts",
-  "repository": "https://github.com/futurepress/epub.js",
+  "repository": "https://github.com/@ig3/epub.js",
   "directories": {
     "test": "test"
   },
