@@ -8,4 +8,24 @@ redirect_from: "/guide/guide.html"
 
 # Guide
 
-This is a placeholder for guides to epub.js.
+## Building
+
+### Tools
+
+#### babel
+
+Babel transpiles the code in the src directory to corresponding code in the
+lib directory.
+
+Targets are the last two version of:
+
+ * Chrome
+ * Safari
+ * ChromeAndriod
+ * iOS
+ * Firefox
+ * Edge
+
+#### webpack
+
+The distribution libraries are assembed by webpack.
