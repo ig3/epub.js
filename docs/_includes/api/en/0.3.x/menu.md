@@ -25,6 +25,9 @@
     <li id="contents-api"><a href="#contents">Contents</a>
     </li>
 
+    <li id="DefaultViewManager-api"><a href="#DefaultViewManager">DefaultViewManager</a>
+    </li>
+
     <li id="epubcfi-api"><a href="#epubcfi">EpubCFI</a>
     </li>
 
@@ -65,6 +68,9 @@
     </li>
 
     <li id="spine-api"><a href="#spine">Spine</a>
+    </li>
+
+    <li id="archive-api"><a href="#archive">Archive</a>
     </li>
 
     <li id="utils-api"><a href="#utils">Utils</a>

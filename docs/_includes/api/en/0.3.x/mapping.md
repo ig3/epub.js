@@ -3,7 +3,7 @@
 The Mapping object maps text locations to EpubCFI ranges.
 
 <h3 id="mapping.constructor">Constructor: new Mapping(layout, direction,
-axis, dev)<h3>
+axis, dev)</h3>
 
 Constructs a new Mapping object.
 
