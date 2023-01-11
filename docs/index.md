@@ -1,6 +1,6 @@
 ---
 layout: home
-title: epub.js - a JavaScript library for rendering ePub documents
+title: epub.js - a JavaScript library for rendering EPUB 3 Publications
 menu: home
 lang: en
 ---
@@ -10,7 +10,7 @@ lang: en
   <div id="homepage-leftpane" class="pane">
     <section id="description">
         <div class="express"><a href="{{ site.baseurl }}/">@ig3/epub.js</a></div>
-        <span class="description">A library for rendering <a href="https://en.wikipedia.org/wiki/EPUB">ePub</a> documents in the browser.</span>
+        <span class="description">A library for rendering <a href="https://en.wikipedia.org/wiki/EPUB">EPUB 3</a> documents in the browser.</span>
     </section>
   </div>
 </section>
@@ -19,20 +19,17 @@ lang: en
 </section>
 
 <section id="intro">
-
-  <div id="boxes" class="clearfix">
-    <div id="web-applications">
-      <h3>ePub Applications</h3> @ig3/epub.js is a JavaScript library for
-      rendering <a href="https://en.wikipedia.org/wiki/EPUB">ePub</a>
-      documents in the browser. It is a basis for building browser based
-      ePub reader applications.
-    </div>
-
-    <div id="apis">
-      <h3>APIs</h3> @ig3/epub.js provides simple APIs for loading, rendering and
-      navigating ePub documents.
-    </div>
-
+  <div>
+  The @ig3/epub.js package provides a library for rendering EPUB 3
+  Publications in the browser. It provides objects and methods for
+  downloding, rendering and navigating through the publications. It is a
+  basis for building browser based EPUB Readers.
+  </div>
+  <div>
+  The @ig3/epub.js library supports publications conforming to the the current
+  <a href="https://www.w3.org/publishing/epub/epub-spec.html">EPUB 3.2</a>
+  specifications. But comments in the code suggest that it may also support
+  publications conforming to th3 EPUB 2 specifications. 
   </div>
 
 </section>

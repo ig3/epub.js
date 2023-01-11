@@ -1,7 +1,9 @@
 <h2 id="book">Book</h2>
 
-The Book object encapsulates an epub book. It has methods for opening,
-closing, rendering and navigating within the book.
+The Book object encapsulates an EPUB Package: a collection of resources
+constituting a rendition of an EPUB Publication. It provides methods for
+loading the EPUB Package data, rendering a view of it in the web browser,
+and navigating the view through the contents.
 
 <h3 id="book.constructor">Constructor: new Book(url, [options])</h3>
 
@@ -12,8 +14,17 @@ const book = new Book('https://epub.server.example.com/path/to/book.epub');
 ```
 Arguments:
  
- * `url` (string) - The URL at which to request the epub book.
- * `options` (object) - Optional options object to configure the book.
+ * `url` (string) - The EPUB Container data or a URL from which an
+ [EPUB OCF ZIP Container](https://www.w3.org/publishing/epub/epub-ocf.html#sec-container-zip),
+ [EPUB Package Document](https://www.w3.org/publishing/epub/epub-packages.html#sec-package-doc),
+ [Publication Manifest](https://www.w3.org/TR/pub-manifest/) or possibly
+ [Readium Web Publication Manifest](https://readium.org/webpub-manifest/)
+ (the code only says 'manifest' and that it is JSON data - it doesn't say
+ what specification the data conforms to)
+
+
+ the EPUB Container data or the Package can be obtained.
+ * `options` (object) - An optional options object to configure the book.
 
 Returns: an instance of Book.
 

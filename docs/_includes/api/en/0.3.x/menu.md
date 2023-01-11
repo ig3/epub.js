@@ -70,6 +70,9 @@
     <li id="spine-api"><a href="#spine">Spine</a>
     </li>
 
+    <li id="packaging-api"><a href="#packaging">Packaging</a>
+    </li>
+
     <li id="archive-api"><a href="#archive">Archive</a>
     </li>
 
