@@ -76,6 +76,9 @@
     <li id="archive-api"><a href="#archive">Archive</a>
     </li>
 
+    <li id="path-api"><a href="#path">Path</a>
+    </li>
+
     <li id="utils-api"><a href="#utils">Utils</a>
     </li>
 

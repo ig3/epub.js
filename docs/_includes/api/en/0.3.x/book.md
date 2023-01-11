@@ -58,6 +58,13 @@ The continuous view manager provides a continuous display presenting one
 chapter / section at a time, complete with vertical scrolling.
 
 
+<h3 id='book.attributes'>Attributes</h3>
+
+<h4 id="book.path">path</h4>
+
+path is an instance of Path for the URL the Open Packaging Format XML file
+or the Manifest URL. Its resolve method is used to resolve paths. 
+
 <h3 id='book.methods'>Methods</h3>
 
 
@@ -92,6 +99,100 @@ The type of input varies with `what`:
  * undefined
 
 
+<h4 id="book.openEpub">openEpub(data, encoding)</h4>
+
+Open an archived epub.
+
+Arguments:
+
+ * `data` - (binary) - The data of the EPUB file.
+ * `encoding` - (string) - should be blank or 'base64'
+
+Returns: a Promise that resolves to undefined after the epub is opened.
+
+<h4 id="book.openContainer">openContainer(url)</h4>
+
+Get the full path of the root file of the first rendition listed in the
+Container File of the EPUB.
+
+See:
+[EPUB 3 Container File](https://www.w3.org/publishing/epub3/epub-ocf.html#sec-container-metainf-container.xml)
+
+Arguments:
+
+ * `url` - (string) - the URL of the container
+
+Returns: a Promise that resolves to the resolved path from the `full-path`
+attribute of the first rootfile element of the container, after the
+container is opened.
+
+The url may be the full URL of the Container File if opening from an
+unarchived source or the full path or relative path (e.g.
+'META-INF/container.xml') from the root of the container if opening from an
+archived source (e.g. a .epub file).
+
+Note: a container document might have more than one rootfile elements
+within its rootfiles element. This method provides no means to access any
+but the first rootfile element.
+
+In the case of opening an epub archive, the resolved path might be
+'/EPUB/content.opf'. In any case, the path to the
+[Package Document](https://www.w3.org/publishing/epub3/epub-packages.html#sec-package-doc)
+that describes the rendition.
+
+<h4 id="book.openPackaging">openPackaging(url)</h4>
+
+Open the 
+[Package Document](https://www.w3.org/publishing/epub3/epub-packages.html#sec-package-doc)
+of the EPUB Rendition.
+
+Arguments:
+
+ * `url` - (string) - the URL of the Package Document.
+
+Returns: a Promise that resolves to undefined after the Package Document
+has been opened.
+
+In particular, this loads the manifest, metadata, spine, cover, resources
+and pageList elements of the Package Document.
+
+<h4 id="book.openManifest">openManifest(url)</h4>
+
+Open the manifest JSON.
+
+In this case the manifest is probably an instance of a
+[Readium Web Publication Manifest](https://readium.org/webpub-manifest/),
+or something compatible.
+
+See [Issue 822](https://github.com/futurepress/epub.js/issues/822) for some
+background.
+
+See [Readium EPUB Profile](https://readium.org/webpub-manifest/profiles/epub.html)
+
+See [readium/webpub-manifest](https://github.com/readium/webpub-manifest)
+
+It isn't clear from the documentation, what the intended or actual use of
+this method is. The epub.js examples folder includes one example using this
+method, but the URL to the manifest now yields a 404 error. Possibly
+because the Readium project has been somewhat terminated by Google, if I
+understand correctly. Or maybe it is just the Readium Chrome Application
+that is deprecated and other parts of the Readium suite are still supported
+/ used ongoing.
+
+See [Readium Desktop](https://www.edrlab.org/software/readium-desktop/). It
+seems Readium Desktop is the basis of Thorium Reader which remains actively
+developed. So, Readium isn't dead yet.
+
+See [Web-Pub](https://www.w3.org/TR/wpub/#webpub). this also has a manifest
+and it may be that epub.js is compatible with the web-pub manifest.
+
+See [Packaged Web Publications](https://www.w3.org/TR/pwpub/). Might
+epub.js have some compatibility with these?
+
+Arguments:
+
+ * `url` - (string) the URL of the manifest document.
+
 <h4 id="book.load">load(path></h4>
 
 Load a resource from the Book.
@@ -112,6 +213,10 @@ Arguments:
 
  * path (string) - the path to resolve
  * absolute (boolean) - force resolving the full URL if true
+
+Returns:
+ * undefined if path is falsy
+ * path, unmodified, if it includes '://' (assumed to be absolute)
 
 <h4 id="book.canonical">canonical(path)</h4>
 

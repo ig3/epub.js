@@ -43,6 +43,9 @@ redirect_from: "/0.3.x/api.html"
   {% include api/{{ page.lang }}/0.3.x/packaging.md %}
   </section>
   <section markdown="1">
+  {% include api/{{ page.lang }}/0.3.x/path.md %}
+  </section>
+  <section markdown="1">
   {% include api/{{ page.lang }}/0.3.x/archive.md %}
   </section>
   <section markdown="1">

@@ -48,6 +48,9 @@ isBase64.
 This reads the data, base64 decoding it if indicated.
 
 
+It appears that isBase64 accepts any truthy value as true, so it isn't
+strictly a boolean. For example, Book.openEpub passes 'base64', which is
+truthy.
 
 <h4 id="archive.openUrl">openUrl(zipUrl, isBase64)</h4>
 
