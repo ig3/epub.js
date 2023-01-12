@@ -81,14 +81,31 @@ Arguments:
    - force opening as a certain type. **Default**: ???
 
 
-<h5>what = 'binary'</h5>
 
-`input` should be a zip file in the form of a String, Array of bytes,
-ArrayBuffer, Uint8Array, Buffer, Blob or a Promise returning one of these.
+<h5>what</h5>
+<h6>default</h6>
+If what isn't specified, the default is as follows:
 
-The data is unzipped using [JSZip](https://stuk.github.io/jszip/).
+If the book instance was created with option encoding set to base64, then
+what is set to 'base64'.
 
-The type of input varies with `what`:
+Otherwise, if `input` is not of type string, then what is set to 'binary'.
+
+Otherwise, if the path in `input` does not end with a filename with an
+extension, then what is set to 'directory'
+
+Otherwise, if the path in `inputs` ends with extension 'epub' then type is
+set to 'epub'.
+
+Otherwise, if the path in `inputs` ends with extension 'opf' then type is
+set to 'opf'.
+
+Otherwise, if the path in `inputs` ends with extension 'json' then type is
+set to 'manifest'.
+
+<h6>input required for each what value</h6>
+
+The type of input varies with the value of `what`:
 
  * binary
  * base64
@@ -97,6 +114,42 @@ The type of input varies with `what`:
  * json
  * directory
  * undefined
+
+If the value of `what` is 'binary' then the value of `input` should be the
+data of an EPUB
+[OCF ZIP Container](https://www.w3.org/publishing/epub/epub-ocf.html#sec-container-zip).
+This is typically a file with extension '.epub'.
+The data is unzipped using [JSZip](https://stuk.github.io/jszip/).
+According to the documentation of JSZip, the input can be a String, Array
+of bytes, ArrayBuffer, Uint8Array, Buffer, Blob or a Promise returning one
+of these.
+
+If the value of `what` is 'base64' then the value of `input` should be a
+base64 encoded string which, when decoded, yields the data of an EPUB OCF
+ZIP Container: an epub file, as for 'binary'.
+
+If the value of `what` is 'epub' then the value of `input` should be a URL
+from which an EPUB OCF ZIP Container can be retrieved.
+
+If the value of `what` is 'opf' then the value of `input` should be a URL
+from which an EPUB 
+[Package Document](https://www.w3.org/publishing/epub3/epub-packages.html#sec-package-doc)
+can be retrieved.
+
+If the value of `what` is 'json' then the value of `input` should be a URL
+from which a
+[Readium Web Publication Manifest](https://readium.org/webpub-manifest/)
+can be retreived, or perhaps some other very similar manifest. It is not
+clear exactly what manifests epub.js is compatible with.
+
+If the value of `what` is 'directory' or undefined then the value of `input`
+should be a URL that is the path of the root directory of an EPUB
+[OCF Abstract Container](https://www.w3.org/publishing/epub/epub-ocf.html#sec-container-abstract)
+directory tree, from which the various contents can be retrieved by
+requests to the specific content and, in particular, with an
+[EPUB 3 Container File](https://www.w3.org/publishing/epub3/epub-ocf.html#sec-container-metainf-container.xml)
+at the sub-path 'META_INFO/container.xml'.
+
 
 
 <h4 id="book.openEpub">openEpub(data, encoding)</h4>
