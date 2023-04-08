@@ -165,6 +165,31 @@ Test can be run by Karma from NPM
 npm test
 ```
 
+### The "path" argument must be of type string. Received null
+
+This error appeared when I first ran the tests. It seems to be due to the
+package phantomjs-prebuilt no installing correctly. I fixed this with:
+
+```
+$ cd node_modules/phantomjs-prebuilt
+$ export OPENSSL_CONF=/etc/ssl
+$ n exec 16.14.0 node ./install.js
+```
+
+This appears not to require any prior installation of phantomjs. It creates
+lib/location.js referring to phantom/bin/phantomjs, which I assume resolves
+(in the appropriate context) to the phantomjs that is part of the
+phantomjs-prebuilt package.
+
+### No binary for ChromeHeadless browser on your platform.
+
+I don't have Chrome browser installed but I have Chromium, so I ran:
+
+```
+$ export CHROME_BIN=/usr/bin/chromium
+$ n exec 16.14.0 npm test
+```
+
 ## Building for Distribution
 
 Builds are concatenated and minified using [webpack](https://webpack.js.org/) and [babel](https://babeljs.io/)
