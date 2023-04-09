@@ -57,7 +57,7 @@
   "dependencies": {
     "@types/localforage": "0.0.34",
     "@xmldom/xmldom": "^0.7.5",
-    "core-js": "^3.18.3",
+    "core-js": "^3.30.0",
     "event-emitter": "^0.3.5",
     "jszip": "^3.10.1",
     "localforage": "^1.10.0",
