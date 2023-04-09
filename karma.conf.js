@@ -91,6 +91,10 @@ module.exports = function(config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['mocha'],
 
+
+    // web server hostname
+    hostname: '127.0.0.1',
+
     // web server port
     port: 9876,
 

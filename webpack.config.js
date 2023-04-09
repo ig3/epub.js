@@ -3,7 +3,7 @@ var path = require("path");
 var PROD = (process.env.NODE_ENV === "production")
 var LEGACY = (process.env.LEGACY)
 var MINIMIZE = (process.env.MINIMIZE === "true")
-var hostname = "localhost";
+var hostname = "127.0.0.1";
 var port = 8080;
 
 var filename = "[name]";
@@ -32,7 +32,8 @@ module.exports = {
 		library: "ePub",
 		libraryTarget: "umd",
 		libraryExport: "default",
-		publicPath: "/dist/"
+		publicPath: "/dist/",
+    hashFunction: 'sha256'
 	},
 	optimization: {
 		minimize: MINIMIZE
@@ -41,7 +42,11 @@ module.exports = {
 		"jszip/dist/jszip": "JSZip",
 		"xmldom": "xmldom"
 	},
-	plugins: [],
+	plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser'
+    })
+  ],
 	resolve: {
 		alias: {
 			path: "path-webpack"

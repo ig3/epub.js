@@ -8,10 +8,10 @@ describe('Book', function() {
 		it('should open a epub', async function() {
 			await book.opened
 			assert.equal(book.isOpen, true, "book is opened");
-			assert.equal( book.url.toString(), "http://localhost:9876/fixtures/alice/OPS/package.opf", "book url is passed to new Book" );
+			assert.equal( book.url.toString(), "http://127.0.0.1:9876/fixtures/alice/OPS/package.opf", "book url is passed to new Book" );
 		});
 		it('should have a local coverUrl', async function() {
-			assert.equal( await book.coverUrl(), "http://localhost:9876/fixtures/alice/OPS/images/cover_th.jpg", "cover url is available" );
+			assert.equal( await book.coverUrl(), "http://127.0.0.1:9876/fixtures/alice/OPS/images/cover_th.jpg", "cover url is available" );
 		});
 	});
 
@@ -25,7 +25,7 @@ describe('Book', function() {
 		});
 		it('should have a blob coverUrl', async function() {
 			let coverUrl = await book.coverUrl()
-			assert( /^blob:http:\/\/localhost:9876\/[^\/]+$/.test(coverUrl), "cover url is available and a blob: url" );
+			assert( /^blob:http:\/\/127.0.0.1:9876\/[^\/]+$/.test(coverUrl), "cover url is available and a blob: url" );
 		});
 	});
 
@@ -46,7 +46,7 @@ describe('Book', function() {
 
 		it('should have a blob coverUrl', async function() {
 			let coverUrl = await book.coverUrl()
-			assert( /^blob:http:\/\/localhost:9876\/[^\/]+$/.test(coverUrl), "cover url is available and a blob: url" );
+			assert( /^blob:http:\/\/127.0.0.1:9876\/[^\/]+$/.test(coverUrl), "cover url is available and a blob: url" );
 		});
 	});
 

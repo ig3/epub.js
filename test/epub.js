@@ -34,7 +34,7 @@ describe('ePub', function() {
 
 		return book.opened.then(function(){
 			assert.equal( book.isOpen, true, "book is opened" );
-			assert.equal( book.url.toString(), "http://localhost:9876/fixtures/alice/OPS/package.opf", "book url is passed to new Book" );
+			assert.equal( book.url.toString(), "http://127.0.0.1:9876/fixtures/alice/OPS/package.opf", "book url is passed to new Book" );
 		});
 	});
 
