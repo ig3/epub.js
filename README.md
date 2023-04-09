@@ -157,6 +157,13 @@ npm start
 
 [View All Examples](http://futurepress.github.io/epub.js/examples/)
 
+## Building from Source
+
+```
+$ git clone https://github.com/ig3/epub.js.git
+$ npm install
+```
+
 ## Testing
 
 Test can be run by Karma from NPM
