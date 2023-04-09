@@ -43,7 +43,7 @@
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
     "karma-phantomjs-launcher": "^1.0.4",
-    "karma-sourcemap-loader": "^0.3.7",
+    "karma-sourcemap-loader": "^0.4.0",
     "karma-webpack": "^5.0.0",
     "mocha": "^10.2.0",
     "process": "^0.11.10",
