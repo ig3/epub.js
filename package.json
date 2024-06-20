@@ -11,6 +11,7 @@
   },
   "scripts": {
     "test": "karma start --single-run --browsers ChromeHeadlessNoSandbox",
+    "testf": "karma start --single-run --browsers Firefox",
     "docs": "documentation build src/epub.js -f html -o documentation/html/",
     "docs:html": "documentation build src/epub.js -f html -o documentation/html/",
     "docs:md": "documentation build src/epub.js -f md -o documentation/md/API.md",
@@ -40,6 +41,7 @@
     "jsdoc": "^4.0.2",
     "karma": "^6.4.1",
     "karma-chrome-launcher": "^3.1.1",
+    "karma-firefox-launcher": "^2.1.3",
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
     "karma-phantomjs-launcher": "^1.0.4",
