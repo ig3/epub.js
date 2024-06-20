@@ -40,7 +40,12 @@ class Url {
 				this.href = this.Url.href;
 
 				this.protocol = this.Url.protocol;
-				this.origin = this.Url.origin;
+        // The URL specification says that the origin for scheme file
+        // is browser dependent and recommends returning null but tests
+        // expect 'file://', so make it so...
+				this.origin = this.protocol === 'file:' ?
+          'file://' :
+          this.Url.origin;
 				this.hash = this.Url.hash;
 				this.search = this.Url.search;
 
@@ -85,7 +90,12 @@ class Url {
 		}
 
 		fullpath = path.resolve(this.directory, what);
-		return this.origin + fullpath;
+    // The URL specification says that the origin for scheme file
+    // is browser dependent and recommends returning null but tests
+    // expect 'file://', so make it so...
+		return this.protocol === 'file:' ?
+      'file://' + fullpath :
+      this.origin + fullpath;
 	}
 
 	/**
